@@ -61,21 +61,31 @@ body {
 
 /* Base gradient background */
 /* Modern dark gradient background */
+/* 🌌 Animated Aurora Background for Dark Mode */
+
 html[data-theme='dark'] body {
-  background: radial-gradient(
-      circle at 30% 20%, 
-      rgba(120, 90, 255, 0.25) 0%, 
-      rgba(40, 20, 60, 0.1) 30%, 
-      transparent 60%
-    ),
-    radial-gradient(
-      circle at 70% 80%, 
-      rgba(180, 100, 255, 0.2) 0%, 
-      rgba(20, 15, 40, 0.3) 40%, 
-      #0b0a15 100%
-    );
-  background-attachment: fixed;
+  background: radial-gradient(circle at 15% 25%, rgba(167, 139, 250, 0.25), transparent 60%),
+              radial-gradient(circle at 80% 75%, rgba(139, 92, 246, 0.25), transparent 60%),
+              linear-gradient(135deg, #0a0914 0%, #14121f 100%);
+  background-size: 400% 400%;
+  /* background-attachment: fixed; */
+  background-blend-mode: screen;
+  animation: auroraMove 25s ease-in-out infinite alternate;
 }
+
+/* Smooth color drift animation */
+@keyframes auroraMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 
 html[data-theme='light'] body {

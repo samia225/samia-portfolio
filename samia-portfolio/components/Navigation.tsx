@@ -46,6 +46,7 @@ export default function Navigation() {
         shadow-[0_0_20px_var(--shadow-color)]
       "
     >
+
       {/* ---- LOGO ---- */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
