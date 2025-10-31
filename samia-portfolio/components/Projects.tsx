@@ -15,11 +15,13 @@ export default function Projects() {
           viewport={{ once: true }}
         >
           {/* ---- HEADER ---- */}
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-            <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-hover)] bg-clip-text text-transparent">
-              Featured Projects
-            </span>
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-12 text-center"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            Featured Projects
           </h2>
+
 
           {/* ---- PROJECT GRID ---- */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

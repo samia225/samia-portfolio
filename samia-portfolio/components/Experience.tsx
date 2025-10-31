@@ -15,10 +15,11 @@ export default function Experience() {
           viewport={{ once: true }}
         >
           {/* ---- HEADER ---- */}
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-            <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-hover)] bg-clip-text text-transparent">
-              Experience
-            </span>
+        <h2
+            className="text-4xl md:text-5xl font-bold mb-12 text-center"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            Experience
           </h2>
 
           {/* ---- TIMELINE ---- */}

@@ -15,14 +15,13 @@ export default function Skills() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {/* ---- HEADER ---- */}
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-            <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-hover)] bg-clip-text text-transparent">
-              Skills & Expertise
-            </span>
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-12 text-center"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            Skills
           </h2>
 
-          {/* ---- GRID ---- */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categories.map(([category, skills], index) => (
               <motion.div
@@ -31,20 +30,18 @@ export default function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-dark-card border border-[var(--accent)]/20 rounded-lg p-6 hover:border-[var(--accent-hover)]/60 transition-all duration-300"
+                className="bg-dark-card border border-cyan-accent/20 rounded-lg p-6 hover:border-purple-accent/60 transition-all duration-300"
               >
-                {/* Category Title */}
-                <h3 className="text-xl font-bold text-[var(--accent)] mb-4">
+                <h3 className="text-xl font-bold text-[var(--accent)]-accent mb-4">
                   {category}
                 </h3>
 
-                {/* Skill Pills */}
                 <div className="flex flex-wrap gap-2">
                   {skills.map((skill) => (
                     <motion.span
                       key={skill}
                       whileHover={{ scale: 1.05 }}
-                      className="px-3 py-2 bg-gradient-to-r from-[var(--accent)]/10 to-[var(--accent-hover)]/10 text-[var(--text-primary)] text-sm rounded-lg border border-[var(--accent)]/30 hover:border-[var(--accent-hover)]/60 transition-all cursor-default"
+                      className="px-3 py-2 bg-gradient-to-r from-cyan-accent/10 to-purple-accent/10 text-gray-300 text-sm rounded-lg border border-cyan-accent/30 hover:border-purple-accent/60 transition-all cursor-default"
                     >
                       {skill}
                     </motion.span>

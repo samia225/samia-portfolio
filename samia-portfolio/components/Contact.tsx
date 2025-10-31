@@ -19,10 +19,11 @@ export default function Contact() {
           className="text-center"
         >
           {/* ---- HEADER ---- */}
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-hover)] bg-clip-text text-transparent">
-              Let's Connect
-            </span>
+                    <h2
+            className="text-4xl md:text-5xl font-bold mb-12 text-center"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            Lets Connect!
           </h2>
 
           {/* ---- SUBTEXT ---- */}
