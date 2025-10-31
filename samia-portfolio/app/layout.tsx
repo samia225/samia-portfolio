@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ThemeProvider } from '@/components/ThemeContext'
+import AuroraBackground from '@/components/AuroraBackground'
 import './globals.css'
 
 export const metadata: Metadata = {

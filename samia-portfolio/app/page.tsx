@@ -10,7 +10,7 @@ import Contact from '@/components/Contact'
 
 export default function Home() {
   return (
-    <main style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)', transition: 'background-color 0.3s ease, color 0.3s ease' }}>
+    <main>
       <Navigation />
       <Hero />
       <About />
