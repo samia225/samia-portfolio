@@ -15,7 +15,7 @@ export default function Experience() {
           viewport={{ once: true }}
         >
           {/* ---- HEADER ---- */}
-        <h2
+          <h2
             className="text-4xl md:text-5xl font-bold mb-12 text-center"
             style={{ color: 'var(--text-primary)' }}
           >
@@ -49,9 +49,24 @@ export default function Experience() {
                   <p className="text-[var(--text-tertiary)] text-sm mb-3">
                     {exp.period}
                   </p>
-                  <p className="text-[var(--text-secondary)] leading-relaxed text-sm">
+                  <p className="text-[var(--text-secondary)] leading-relaxed text-sm mb-4">
                     {exp.description}
                   </p>
+
+                  {/* Highlights/Bullet Points */}
+                  {exp.highlights && exp.highlights.length > 0 && (
+                    <ul className="space-y-2">
+                      {exp.highlights.map((point, i) => (
+                        <li
+                          key={i}
+                          className="text-[var(--text-secondary)] text-sm flex items-start gap-2"
+                        >
+                          <span className="text-[var(--accent)] mt-1 flex-shrink-0">•</span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </motion.div>
             ))}

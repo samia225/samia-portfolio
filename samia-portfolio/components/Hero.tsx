@@ -13,22 +13,17 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="mb-6 inline-block">
-            <span className="px-4 py-2 bg-cyan-accent/10 border border-cyan-accent/30 rounded-full text-cyan-accent text-sm font-semibold">
-              Welcome to my portfolio ✨
-            </span>
-          </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-accent via-white to-purple-accent bg-clip-text text-transparent">
+
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-sky-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             Hi, I'm {portfolioData.name}
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 mb-4">
-            {portfolioData.title}
-          </p>
+
+        
 
           <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
-            Crafting elegant solutions at the intersection of Machine Learning, Data Engineering, and Software Development.
+            A 4th-year Computer Science student at the University of Alberta specializing in Data Science, Data Engineering, Machine Learning, and Software Development.
           </p>
         </motion.div>
 

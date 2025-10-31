@@ -23,7 +23,7 @@ My journey spans from automating corporate procurement pipelines to optimizing r
     {
       id: 1,
       title: 'FoodMinder: Smart Grocery Management',
-      description: 'A React Native app that automates receipt scanning and tracks expiration dates. Reduces manual entry by 80% using OCR and Gemini API for intelligent expense monitoring.',
+      description: 'Scalable data integration and analytics solution for enterprise procurement.',
       tech: ['React Native', 'TypeScript', 'OCR', 'Gemini API'],
       github: '#',
       demo: '#',
@@ -80,19 +80,30 @@ My journey spans from automating corporate procurement pipelines to optimizing r
       role: 'Data Engineer Intern',
       company: 'City of Edmonton',
       period: 'May 2025 – Present',
-      description: 'Automated ETL pipelines and developed dashboards for corporate procurement, improving accuracy by 25%.',
+      description: '',
+      highlights: [
+        'Built scalable ETL pipeline integrating 20 SAP Ariba REST APIs for operational sourcing and procurement using Python (Pandas, NumPy, SQLAlchemy) with OAuth authentication, retry logic, post-load validation with duplicate detection, and incremental loading to serve 500+ users processing millions of records daily.',
+        'Developed 4 Tableau/Power BI dashboards with automated pipeline alerts and data quality monitoring, reducing reporting discrepancies by 30% and enabling multi-million-dollar procurement decisions.'
+      ],
     },
     {
       role: 'ML Developer Co-op',
       company: 'PDASA Lab, University of Alberta',
       period: 'Jan 2025 – Apr 2025',
-      description: 'Migrated RL systems to PyTorch, reducing training time by 35% and improving agent accuracy by 12%.',
+      description: '',
+      highlights: [
+        'Migrated RL system TensorFlow → PyTorch, implemented A3C with CNN-LSTM, reducing training time by 35%.',
+        'Deployed real-time object detection for liquid level monitoring in Primary Separation Vessel (PSV), enabling autonomous valve adjustments in oil & gas operations.'
+      ],
     },
     {
       role: 'Undergraduate Researcher',
       company: 'Robotics Lab, University of Alberta',
       period: 'Sep 2024 – Present',
       description: 'Designed autoencoder-based action maps for robotic control with improved transferability.',
+      highlights: ['Designed custom VAE with Soft Actor-Critic (SAC) in PyTorch, tested on RobotSuite. Improved model transferability and reduced training data by 40%.',
+        'Optimized linear MPC for UAV control (thrust, pitch, roll), achieving 27% faster response, 41% stability improvement, 18% lower overhead.'
+      ],
     },
   ],
 }

@@ -12,7 +12,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark')
+  const [theme, setTheme] = useState<Theme>('light')
   const [mounted, setMounted] = useState(false)
 
   // Load theme from localStorage on mount
@@ -24,7 +24,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     } else {
       // Check system preference
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      const initialTheme = prefersDark ? 'dark' : 'dark' // Default to dark
+      const initialTheme = prefersDark ? 'dark' : 'light' // Default to light
       setTheme(initialTheme)
       document.documentElement.setAttribute('data-theme', initialTheme)
     }
