@@ -8,9 +8,8 @@ export const portfolioData = {
     github: 'https://github.com/samia225',
     linkedin: 'https://linkedin.com/in/samia-rahman-3264281b2',
   },
-  // Upload your latest resume into /public, then set the filename here.
-  // Example: '/Resume_Samia_UAlberta_26.pdf'
-  resumeUrl: '/Resume_Samia_UAlberta_26.pdf',
+  // Upload your latest resume into /public as resume.pdf.
+  resumeUrl: '/resume.pdf',
   funFacts: [
     {
       emoji: '🌌',
