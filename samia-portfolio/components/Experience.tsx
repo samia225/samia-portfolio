@@ -49,7 +49,7 @@ export default function Experience() {
                   <ul className="space-y-2">
                     {exp.highlights.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex gap-2 text-sm leading-relaxed text-[var(--text-secondary)]">
-                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+                        <span className="mt-2 h-1.5 w-1.5 bg-[var(--accent)]" />
                         <span>{point}</span>
                       </li>
                     ))}

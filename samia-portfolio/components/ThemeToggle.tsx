@@ -12,10 +12,11 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
-      className="rounded-full border p-2 transition duration-300 hover:shadow-md"
+      className="border p-2 transition duration-300 hover:shadow-md"
       style={{
         borderColor: 'var(--border-color)',
         backgroundColor: 'var(--surface-strong)',
+        borderRadius: '2px',
       }}
       aria-label="Toggle theme"
     >

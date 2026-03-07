@@ -14,37 +14,37 @@ html {
 
 html:not([data-theme]),
 html[data-theme='light'] {
-  --bg-primary: #f6f8ff;
-  --bg-secondary: #ebf1ff;
-  --surface: rgba(255, 255, 255, 0.78);
-  --surface-strong: rgba(255, 255, 255, 0.9);
-  --text-primary: #111428;
-  --text-secondary: #2f3554;
-  --text-tertiary: #525b85;
-  --border-color: rgba(116, 130, 191, 0.24);
-  --shadow-color: rgba(12, 22, 61, 0.08);
-  --accent: #4f46e5;
-  --accent-soft: #7c3aed;
-  --accent-glow: rgba(99, 102, 241, 0.45);
-  --pill-bg: rgba(79, 70, 229, 0.1);
-  --nav-bg: rgba(255, 255, 255, 0.7);
+  --bg-primary: #f8f8f8;
+  --bg-secondary: #ececec;
+  --surface: rgba(255, 255, 255, 0.75);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --text-primary: #111111;
+  --text-secondary: #2f2f2f;
+  --text-tertiary: #646464;
+  --border-color: rgba(25, 25, 25, 0.16);
+  --shadow-color: rgba(20, 20, 20, 0.09);
+  --accent: #1e40af;
+  --accent-soft: #334155;
+  --accent-glow: rgba(30, 64, 175, 0.18);
+  --pill-bg: rgba(17, 17, 17, 0.05);
+  --nav-bg: rgba(255, 255, 255, 0.72);
 }
 
 html[data-theme='dark'] {
-  --bg-primary: #070b1d;
-  --bg-secondary: #110f2b;
-  --surface: rgba(16, 23, 52, 0.68);
-  --surface-strong: rgba(14, 20, 44, 0.86);
-  --text-primary: #eff3ff;
-  --text-secondary: #cad3f7;
-  --text-tertiary: #9ea9d9;
-  --border-color: rgba(134, 148, 214, 0.23);
-  --shadow-color: rgba(3, 6, 24, 0.52);
-  --accent: #8b7cff;
-  --accent-soft: #2dd4bf;
-  --accent-glow: rgba(101, 215, 206, 0.34);
-  --pill-bg: rgba(139, 124, 255, 0.16);
-  --nav-bg: rgba(13, 18, 38, 0.68);
+  --bg-primary: #060606;
+  --bg-secondary: #0f0f0f;
+  --surface: rgba(18, 18, 18, 0.78);
+  --surface-strong: rgba(20, 20, 20, 0.9);
+  --text-primary: #f5f5f5;
+  --text-secondary: #d4d4d4;
+  --text-tertiary: #9e9e9e;
+  --border-color: rgba(255, 255, 255, 0.16);
+  --shadow-color: rgba(0, 0, 0, 0.6);
+  --accent: #93c5fd;
+  --accent-soft: #d4d4d4;
+  --accent-glow: rgba(147, 197, 253, 0.28);
+  --pill-bg: rgba(255, 255, 255, 0.06);
+  --nav-bg: rgba(10, 10, 10, 0.76);
 }
 
 html {
@@ -63,9 +63,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.35s ease, color 0.35s ease;
   background:
-    radial-gradient(circle at 10% 18%, rgba(111, 76, 255, 0.22), transparent 38%),
-    radial-gradient(circle at 85% 18%, rgba(45, 212, 191, 0.18), transparent 40%),
-    radial-gradient(circle at 48% 86%, rgba(59, 130, 246, 0.16), transparent 36%),
+    radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.09), transparent 35%),
+    radial-gradient(circle at 84% 18%, rgba(147, 197, 253, 0.08), transparent 42%),
+    radial-gradient(circle at 50% 84%, rgba(255, 255, 255, 0.05), transparent 34%),
     linear-gradient(140deg, var(--bg-primary), var(--bg-secondary));
   background-attachment: fixed;
 }
@@ -88,7 +88,7 @@ section {
 }
 
 .eyebrow {
-  @apply mb-3 inline-flex items-center rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em];
+  @apply mb-3 inline-flex items-center px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em];
   color: var(--accent);
   background: var(--pill-bg);
   border: 1px solid var(--border-color);
@@ -106,7 +106,7 @@ section {
 
 .glass-panel {
   backdrop-filter: blur(14px);
-  border-radius: 1rem;
+  border-radius: 2px;
   background: var(--surface);
   border: 1px solid var(--border-color);
   box-shadow:
@@ -115,7 +115,8 @@ section {
 }
 
 .glass-card {
-  @apply rounded-2xl p-6 transition duration-300;
+  @apply p-6 transition duration-300;
+  border-radius: 2px;
   backdrop-filter: blur(14px);
   background: var(--surface);
   border: 1px solid var(--border-color);
@@ -123,22 +124,14 @@ section {
 }
 
 .glass-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow:
-    0 22px 44px -24px var(--shadow-color),
+    0 16px 32px -24px var(--shadow-color),
     0 0 0 1px var(--accent-glow);
 }
 
 .accent-gradient {
-  background-image: linear-gradient(
-    120deg,
-    var(--accent-soft),
-    var(--accent),
-    #4ade80
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--text-primary);
 }
 
 .soft-border {
@@ -146,7 +139,7 @@ section {
 }
 
 .pill {
-  @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium;
+  @apply inline-flex items-center px-3 py-1 text-xs font-medium;
   color: var(--text-secondary);
   background: var(--pill-bg);
   border: 1px solid var(--border-color);
@@ -176,20 +169,20 @@ section {
 }
 
 .aurora-blob.one {
-  background: radial-gradient(circle, rgba(129, 140, 248, 0.75), transparent 62%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 62%);
   top: -14rem;
   left: -10rem;
 }
 
 .aurora-blob.two {
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.6), transparent 65%);
+  background: radial-gradient(circle, rgba(147, 197, 253, 0.2), transparent 65%);
   top: 22%;
   right: -12rem;
   animation-delay: 2.5s;
 }
 
 .aurora-blob.three {
-  background: radial-gradient(circle, rgba(45, 212, 191, 0.62), transparent 60%);
+  background: radial-gradient(circle, rgba(203, 213, 225, 0.18), transparent 60%);
   bottom: -14rem;
   left: 30%;
   animation-delay: 5.2s;
@@ -197,10 +190,25 @@ section {
 
 .magical-grid {
   background-image:
-    linear-gradient(rgba(126, 140, 205, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(126, 140, 205, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 40px 40px;
   mask-image: radial-gradient(circle at center, black 45%, transparent 90%);
+}
+
+.fact-star {
+  @apply inline-flex items-center justify-center transition;
+  border-radius: 2px;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 1px solid var(--border-color);
+  background: var(--surface-strong);
+  color: var(--text-primary);
+}
+
+.fact-star:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 0 0 1px var(--accent-glow), 0 10px 24px -12px var(--accent-glow);
 }
 
 @keyframes auroraFloat {

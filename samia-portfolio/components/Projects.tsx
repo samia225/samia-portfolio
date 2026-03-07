@@ -53,8 +53,9 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition hover:opacity-90"
+                    className="flex flex-1 items-center justify-center gap-2 px-3 py-2 text-sm font-medium transition hover:opacity-90"
                     style={{
+                      borderRadius: '2px',
                       background: 'var(--pill-bg)',
                       color: 'var(--text-primary)',
                       border: '1px solid var(--border-color)',
@@ -67,8 +68,12 @@ export default function Projects() {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-white transition hover:opacity-90"
-                    style={{ background: 'linear-gradient(120deg, var(--accent-soft), var(--accent))' }}
+                    className="flex flex-1 items-center justify-center gap-2 px-3 py-2 text-sm font-semibold transition hover:opacity-90"
+                    style={{
+                      borderRadius: '2px',
+                      background: 'var(--text-primary)',
+                      color: 'var(--bg-primary)',
+                    }}
                   >
                     <ExternalLink size={16} />
                     Demo

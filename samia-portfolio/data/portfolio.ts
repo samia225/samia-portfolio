@@ -8,6 +8,33 @@ export const portfolioData = {
     github: 'https://github.com/samia225',
     linkedin: 'https://linkedin.com/in/samia-rahman-3264281b2',
   },
+  funFacts: [
+    {
+      emoji: '🌌',
+      title: 'Northern Lights Dream',
+      fact: 'I want to build immersive AI visuals inspired by aurora skies and use them in creative products.',
+    },
+    {
+      emoji: '🤖',
+      title: 'Robot Brain Mode',
+      fact: 'I have worked on reinforcement learning systems that improve control behavior and training efficiency.',
+    },
+    {
+      emoji: '📊',
+      title: 'Data to Decisions',
+      fact: 'I enjoy turning messy enterprise data into clear dashboards people can actually make decisions with.',
+    },
+    {
+      emoji: '☕',
+      title: 'Build Ritual',
+      fact: 'My favorite workflow is: sketch idea, prototype quickly, then polish the experience with thoughtful details.',
+    },
+    {
+      emoji: '✨',
+      title: 'Design + Engineering',
+      fact: 'I care about how software feels, not just whether it works.',
+    },
+  ],
   about: `I'm a passionate Computer Science student at the University of Alberta with a strong focus on Machine Learning, Data Engineering, and Software Development. With experience building ETL pipelines, training RL agents, and developing full-stack applications, I love solving complex problems with elegant code.
 
 My journey spans from automating corporate procurement pipelines to optimizing robotic control systems. I'm particularly interested in the intersection of AI and practical applications.`,

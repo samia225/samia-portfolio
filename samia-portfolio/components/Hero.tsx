@@ -47,18 +47,20 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:scale-[1.02]"
+              className="px-6 py-3 text-sm font-semibold transition hover:opacity-90"
               style={{
-                background: 'linear-gradient(120deg, var(--accent-soft), var(--accent))',
-                boxShadow: '0 14px 30px -18px var(--accent-glow)',
+                borderRadius: '2px',
+                background: 'var(--text-primary)',
+                color: 'var(--bg-primary)',
               }}
             >
               Explore Projects
             </a>
             <a
               href="#contact"
-              className="rounded-full px-6 py-3 text-sm font-semibold transition hover:bg-[var(--pill-bg)]"
+              className="px-6 py-3 text-sm font-semibold transition hover:bg-[var(--pill-bg)]"
               style={{
+                borderRadius: '2px',
                 color: 'var(--text-primary)',
                 border: '1px solid var(--border-color)',
                 background: 'var(--surface-strong)',

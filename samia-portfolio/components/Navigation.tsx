@@ -7,10 +7,10 @@ import ThemeToggle from './ThemeToggle'
 
 const menuItems = [
   { name: 'Home', id: 'home' },
-  { name: 'About', id: 'about' },
-  { name: 'Experience', id: 'experience' },
   { name: 'Projects', id: 'projects' },
+  { name: 'About', id: 'about' },
   { name: 'Skills', id: 'skills' },
+  { name: 'Experience', id: 'experience' },
   { name: 'Contact', id: 'contact' },
 ]
 
@@ -43,9 +43,10 @@ export default function Navigation() {
   return (
     <header className="fixed inset-x-0 top-4 z-50 px-4 sm:px-6">
       <nav
-        className={`section-shell mx-auto flex items-center justify-between rounded-2xl border px-4 py-3 transition duration-300 sm:px-6 ${
+        className={`section-shell mx-auto flex items-center justify-between border px-4 py-3 transition duration-300 sm:px-6 ${
           scrolled ? 'glass-panel' : 'bg-[var(--nav-bg)] backdrop-blur-lg soft-border'
         }`}
+        style={{ borderRadius: '2px' }}
       >
         <a
           href="#home"
@@ -66,7 +67,7 @@ export default function Navigation() {
               {activeSection === item.id && (
                 <motion.span
                   layoutId="nav-dot"
-                  className="absolute -bottom-1 left-0 h-0.5 w-full rounded-full bg-[var(--accent)]"
+                  className="absolute -bottom-1 left-0 h-0.5 w-full bg-[var(--accent)]"
                 />
               )}
             </a>
@@ -77,7 +78,8 @@ export default function Navigation() {
           <ThemeToggle />
           <button
             onClick={() => setIsOpen((prev) => !prev)}
-            className="rounded-lg p-2 text-[var(--text-secondary)] transition hover:bg-[var(--pill-bg)] hover:text-[var(--text-primary)] md:hidden"
+            className="p-2 text-[var(--text-secondary)] transition hover:bg-[var(--pill-bg)] hover:text-[var(--text-primary)] md:hidden"
+            style={{ borderRadius: '2px' }}
             aria-label="Toggle mobile menu"
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -88,7 +90,7 @@ export default function Navigation() {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="absolute left-0 right-0 top-[calc(100%+0.7rem)] mx-4 rounded-xl border bg-[var(--surface-strong)] p-4 backdrop-blur-xl md:hidden"
+            className="absolute left-0 right-0 top-[calc(100%+0.7rem)] mx-4 border bg-[var(--surface-strong)] p-4 backdrop-blur-xl md:hidden"
             style={{ borderColor: 'var(--border-color)' }}
           >
             <div className="flex flex-col gap-2">
@@ -97,11 +99,12 @@ export default function Navigation() {
                   key={item.id}
                   href={`#${item.id}`}
                   onClick={() => setIsOpen(false)}
-                  className={`rounded-lg px-3 py-2 text-sm transition ${
+                  className={`px-3 py-2 text-sm transition ${
                     activeSection === item.id
                       ? 'bg-[var(--pill-bg)] text-[var(--text-primary)]'
                       : 'text-[var(--text-secondary)] hover:bg-[var(--pill-bg)] hover:text-[var(--text-primary)]'
                   }`}
+                  style={{ borderRadius: '2px' }}
                 >
                   {item.name}
                 </a>
