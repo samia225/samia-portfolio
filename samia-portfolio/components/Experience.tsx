@@ -2,73 +2,60 @@
 
 import { motion } from 'framer-motion'
 import { portfolioData } from '@/data/portfolio'
-import { Briefcase } from 'lucide-react'
+import { BriefcaseBusiness } from 'lucide-react'
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 px-4 bg-dark-bg">
-      <div className="max-w-6xl mx-auto">
+    <section id="experience" className="py-20 sm:py-24">
+      <div className="section-shell">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
         >
-          {/* ---- HEADER ---- */}
-          <h2
-            className="text-4xl md:text-5xl font-bold mb-12 text-center"
-            style={{ color: 'var(--text-primary)' }}
-          >
-            Experience
-          </h2>
+          <div className="section-header">
+            <span className="eyebrow">Experience</span>
+            <h2 className="section-title">Building high-impact systems in real environments</h2>
+          </div>
 
-          {/* ---- TIMELINE ---- */}
-          <div className="space-y-8">
+          <div className="space-y-5">
             {portfolioData.experience.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
+              <motion.article
+                key={`${exp.company}-${index}`}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="relative bg-dark-card border border-[var(--accent)]/20 rounded-lg p-6 hover:border-[var(--accent-hover)]/60 transition-all duration-300"
+                transition={{ duration: 0.45, delay: index * 0.08 }}
+                className="glass-card"
               >
-                {/* Icon line accent */}
-                <div className="absolute -left-4 top-6 flex items-center justify-center w-8 h-8 bg-[var(--accent)]/10 border border-[var(--accent)]/40 rounded-full">
-                  <Briefcase size={16} className="text-[var(--accent)]" />
+                <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.16em] text-[var(--text-tertiary)]">{exp.period}</p>
+                    <h3 className="mt-1 text-xl font-semibold text-[var(--text-primary)]">{exp.role}</h3>
+                    <p className="text-[var(--accent)]">{exp.company}</p>
+                  </div>
+                  <span className="pill">
+                    <BriefcaseBusiness size={14} className="mr-2" />
+                    Professional
+                  </span>
                 </div>
 
-                {/* Content */}
-                <div className="ml-6">
-                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-1">
-                    {exp.role}
-                  </h3>
-                  <p className="text-[var(--accent)] font-semibold mb-1">
-                    {exp.company}
-                  </p>
-                  <p className="text-[var(--text-tertiary)] text-sm mb-3">
-                    {exp.period}
-                  </p>
-                  <p className="text-[var(--text-secondary)] leading-relaxed text-sm mb-4">
-                    {exp.description}
-                  </p>
+                {exp.description && (
+                  <p className="mb-3 text-sm leading-relaxed text-[var(--text-secondary)]">{exp.description}</p>
+                )}
 
-                  {/* Highlights/Bullet Points */}
-                  {exp.highlights && exp.highlights.length > 0 && (
-                    <ul className="space-y-2">
-                      {exp.highlights.map((point, i) => (
-                        <li
-                          key={i}
-                          className="text-[var(--text-secondary)] text-sm flex items-start gap-2"
-                        >
-                          <span className="text-[var(--accent)] mt-1 flex-shrink-0">•</span>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </motion.div>
+                {exp.highlights.length > 0 && (
+                  <ul className="space-y-2">
+                    {exp.highlights.map((point, pointIndex) => (
+                      <li key={pointIndex} className="flex gap-2 text-sm leading-relaxed text-[var(--text-secondary)]">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </motion.article>
             ))}
           </div>
         </motion.div>

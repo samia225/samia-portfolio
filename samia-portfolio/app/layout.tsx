@@ -17,9 +17,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="bg-dark-bg text-white antialiased">
+    <html lang="en" suppressHydrationWarning>
+      <body className="antialiased">
         <ThemeProvider>
+          <AuroraBackground />
           {children}
         </ThemeProvider>
       </body>

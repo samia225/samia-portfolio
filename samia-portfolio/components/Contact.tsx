@@ -2,102 +2,68 @@
 
 import { motion } from 'framer-motion'
 import { portfolioData } from '@/data/portfolio'
-import { Mail, Linkedin, Github } from 'lucide-react'
+import { Github, Linkedin, Mail, WandSparkles } from 'lucide-react'
 
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="py-20 px-4 bg-dark-bg transition-colors duration-300"
-    >
-      <div className="max-w-4xl mx-auto">
+    <section id="contact" className="pb-20 pt-20 sm:pb-24 sm:pt-24">
+      <div className="section-shell">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center"
+          transition={{ duration: 0.7 }}
+          className="glass-panel p-8 text-center sm:p-12"
         >
-          {/* ---- HEADER ---- */}
-                    <h2
-            className="text-4xl md:text-5xl font-bold mb-12 text-center"
-            style={{ color: 'var(--text-primary)' }}
-          >
-            Lets Connect!
-          </h2>
-
-          {/* ---- SUBTEXT ---- */}
-          <p className="text-xl text-[var(--text-secondary)] mb-12 max-w-2xl mx-auto">
-            I'm always open to new opportunities and interesting conversations. Feel free to reach out!
+          <span className="eyebrow mx-auto">
+            <WandSparkles size={14} className="mr-2" />
+            Contact
+          </span>
+          <h2 className="section-title">Let us create something meaningful</h2>
+          <p className="section-description">
+            Open to internships, full-time opportunities, and collaborations where design quality and technical depth
+            matter.
           </p>
 
-          {/* ---- CONTACT CARDS ---- */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {/* EMAIL CARD */}
-            <motion.a
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            <a
               href={`mailto:${portfolioData.email}`}
-              whileHover={{ y: -5 }}
-              className="bg-dark-card border border-[var(--accent)]/20 rounded-lg p-6 hover:border-[var(--accent-hover)]/60 transition-all duration-300"
+              className="glass-card text-left"
+              aria-label="Email"
             >
-              <Mail size={32} className="mx-auto mb-4 text-[var(--accent)]" />
-              <h3 className="font-bold mb-2 text-[var(--text-primary)]">
-                Email
-              </h3>
-              <p className="text-[var(--text-tertiary)] text-sm break-all">
-                {portfolioData.email}
-              </p>
-            </motion.a>
+              <Mail size={20} className="text-[var(--accent)]" />
+              <p className="mt-3 text-sm font-semibold text-[var(--text-primary)]">Email</p>
+              <p className="mt-1 text-sm text-[var(--text-secondary)] break-all">{portfolioData.email}</p>
+            </a>
 
-            {/* LINKEDIN CARD */}
-            <motion.a
+            <a
               href={portfolioData.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ y: -5 }}
-              className="bg-dark-card border border-[var(--accent)]/20 rounded-lg p-6 hover:border-[var(--accent-hover)]/60 transition-all duration-300"
+              className="glass-card text-left"
+              aria-label="LinkedIn"
             >
-              <Linkedin
-                size={32}
-                className="mx-auto mb-4 text-[var(--accent-hover)]"
-              />
-              <h3 className="font-bold mb-2 text-[var(--text-primary)]">
-                LinkedIn
-              </h3>
-              <p className="text-[var(--text-tertiary)] text-sm">
-                Connect with me
-              </p>
-            </motion.a>
+              <Linkedin size={20} className="text-[var(--accent)]" />
+              <p className="mt-3 text-sm font-semibold text-[var(--text-primary)]">LinkedIn</p>
+              <p className="mt-1 text-sm text-[var(--text-secondary)]">Connect professionally</p>
+            </a>
 
-            {/* GITHUB CARD */}
-            <motion.a
+            <a
               href={portfolioData.social.github}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ y: -5 }}
-              className="bg-dark-card border border-[var(--accent)]/20 rounded-lg p-6 hover:border-[var(--accent-hover)]/60 transition-all duration-300"
+              className="glass-card text-left"
+              aria-label="GitHub"
             >
-              <Github size={32} className="mx-auto mb-4 text-[var(--accent)]" />
-              <h3 className="font-bold mb-2 text-[var(--text-primary)]">
-                GitHub
-              </h3>
-              <p className="text-[var(--text-tertiary)] text-sm">
-                Check out my work
-              </p>
-            </motion.a>
+              <Github size={20} className="text-[var(--accent)]" />
+              <p className="mt-3 text-sm font-semibold text-[var(--text-primary)]">GitHub</p>
+              <p className="mt-1 text-sm text-[var(--text-secondary)]">View code and experiments</p>
+            </a>
           </div>
 
-          {/* ---- FOOTER ---- */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="pt-8 border-t border-[var(--accent)]/20"
-          >
-            <p className="text-[var(--text-tertiary)] text-sm">
-              © 2025 Samia Rahman. Built with Next.js, Tailwind CSS, and Framer Motion.
-            </p>
-          </motion.div>
+          <p className="mt-10 text-xs text-[var(--text-tertiary)]">
+            © 2026 Samia Rahman. Crafted with Next.js, Tailwind CSS, and Framer Motion.
+          </p>
         </motion.div>
       </div>
     </section>

@@ -12,13 +12,17 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
-      className="p-2 rounded-full bg-dark-card hover:bg-cyan-accent/10 border border-cyan-accent/30 transition-colors duration-300"
+      className="rounded-full border p-2 transition duration-300 hover:shadow-md"
+      style={{
+        borderColor: 'var(--border-color)',
+        backgroundColor: 'var(--surface-strong)',
+      }}
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? (
-        <Sun size={20} className="text-yellow-400" />
+        <Sun size={18} className="text-amber-400" />
       ) : (
-        <Moon size={20} className="text-blue-400" />
+        <Moon size={18} className="text-indigo-500" />
       )}
     </motion.button>
   )

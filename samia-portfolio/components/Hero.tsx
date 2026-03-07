@@ -2,91 +2,112 @@
 
 import { motion } from 'framer-motion'
 import { portfolioData } from '@/data/portfolio'
-import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react'
+import { ArrowDown, Github, Linkedin, Mail, Sparkles } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 px-4 overflow-hidden">
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-
-
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-sky-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Hi, I'm {portfolioData.name}
-          </h1>
-
-
-        
-
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
-            A 4th-year Computer Science student at the University of Alberta specializing in Data Science, Data Engineering, Machine Learning, and Software Development.
-          </p>
-        </motion.div>
-
-        {/* Social Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex justify-center gap-6 mb-12"
-        >
-          <a
-            href={portfolioData.social.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 bg-dark-card hover:bg-cyan-accent/10 border border-cyan-accent/30 rounded-full transition-all duration-300 hover:text-cyan-accent text-gray-300"
+    <section id="home" className="relative flex min-h-screen items-center pt-28 sm:pt-32">
+      <div className="section-shell">
+        <div className="mx-auto max-w-4xl text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="eyebrow mx-auto"
           >
-            <Github size={24} />
-          </a>
-          <a
-            href={portfolioData.social.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 bg-dark-card hover:bg-purple-accent/10 border border-purple-accent/30 rounded-full transition-all duration-300 hover:text-purple-accent text-gray-300"
-          >
-            <Linkedin size={24} />
-          </a>
-          <a
-            href={`mailto:${portfolioData.email}`}
-            className="p-3 bg-dark-card hover:bg-cyan-accent/10 border border-cyan-accent/30 rounded-full transition-all duration-300 hover:text-cyan-accent text-gray-300"
-          >
-            <Mail size={24} />
-          </a>
-        </motion.div>
+            <Sparkles size={14} className="mr-2" />
+            Magical builds, real-world impact
+          </motion.p>
 
-        {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <a
-            href="#projects"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-cyan-accent to-purple-accent text-dark-bg font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-accent/50 transition-all duration-300 transform hover:scale-105"
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="mt-5 text-4xl font-semibold leading-tight sm:text-5xl md:text-6xl"
           >
-            View My Work
-          </a>
-        </motion.div>
+            Hi, I am <span className="accent-gradient">{portfolioData.name}</span>
+          </motion.h1>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mx-auto mt-6 max-w-2xl text-base leading-relaxed sm:text-lg"
+            style={{ color: 'var(--text-secondary)' }}
+          >
+            {portfolioData.title}. I design data-driven systems and machine learning products with a clean,
+            thoughtful aesthetic inspired by northern lights and creative experimentation.
+          </motion.p>
+
           <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="mt-8 flex flex-wrap justify-center gap-3"
           >
-            <ArrowDown size={24} className="text-cyan-accent" />
+            <a
+              href="#projects"
+              className="rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:scale-[1.02]"
+              style={{
+                background: 'linear-gradient(120deg, var(--accent-soft), var(--accent))',
+                boxShadow: '0 14px 30px -18px var(--accent-glow)',
+              }}
+            >
+              Explore Projects
+            </a>
+            <a
+              href="#contact"
+              className="rounded-full px-6 py-3 text-sm font-semibold transition hover:bg-[var(--pill-bg)]"
+              style={{
+                color: 'var(--text-primary)',
+                border: '1px solid var(--border-color)',
+                background: 'var(--surface-strong)',
+              }}
+            >
+              Let us Connect
+            </a>
           </motion.div>
-        </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="mt-10 flex justify-center gap-3"
+          >
+            <a
+              href={portfolioData.social.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-card !p-3"
+              aria-label="GitHub"
+            >
+              <Github size={18} />
+            </a>
+            <a
+              href={portfolioData.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-card !p-3"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={18} />
+            </a>
+            <a href={`mailto:${portfolioData.email}`} className="glass-card !p-3" aria-label="Email">
+              <Mail size={18} />
+            </a>
+          </motion.div>
+        </div>
       </div>
+
+      <motion.a
+        href="#about"
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 1.8, repeat: Infinity }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--text-tertiary)] transition hover:text-[var(--text-primary)]"
+        aria-label="Scroll to about section"
+      >
+        <ArrowDown size={20} />
+      </motion.a>
     </section>
   )
 }

@@ -7,47 +7,38 @@ export default function Skills() {
   const categories = Object.entries(portfolioData.skills)
 
   return (
-    <section id="skills" className="py-20 px-4 bg-dark-bg">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-20 sm:py-24">
+      <div className="section-shell">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
         >
-          <h2
-            className="text-4xl md:text-5xl font-bold mb-12 text-center"
-            style={{ color: 'var(--text-primary)' }}
-          >
-            Skills
-          </h2>
+          <div className="section-header">
+            <span className="eyebrow">Skills</span>
+            <h2 className="section-title">Tools I use to turn ideas into products</h2>
+          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {categories.map(([category, skills], index) => (
-              <motion.div
+              <motion.article
                 key={category}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-dark-card border border-cyan-accent/20 rounded-lg p-6 hover:border-purple-accent/60 transition-all duration-300"
+                transition={{ duration: 0.45, delay: index * 0.08 }}
+                className="glass-card"
               >
-                <h3 className="text-xl font-bold text-[var(--accent)]-accent mb-4">
-                  {category}
-                </h3>
-
+                <h3 className="mb-4 text-lg font-semibold text-[var(--text-primary)]">{category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {skills.map((skill) => (
-                    <motion.span
-                      key={skill}
-                      whileHover={{ scale: 1.05 }}
-                      className="px-3 py-2 bg-gradient-to-r from-cyan-accent/10 to-purple-accent/10 text-gray-300 text-sm rounded-lg border border-cyan-accent/30 hover:border-purple-accent/60 transition-all cursor-default"
-                    >
+                    <span key={skill} className="pill">
                       {skill}
-                    </motion.span>
+                    </span>
                   ))}
                 </div>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         </motion.div>
