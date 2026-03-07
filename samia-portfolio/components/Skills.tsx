@@ -17,7 +17,6 @@ export default function Skills() {
         >
           <div className="section-header">
             <span className="eyebrow">Skills</span>
-            <h2 className="section-title">Tools I use to turn ideas into products</h2>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -41,6 +40,7 @@ export default function Skills() {
               </motion.article>
             ))}
           </div>
+
         </motion.div>
       </div>
     </section>

@@ -1,16 +1,16 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Menu, X, Sparkles } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { motion } from 'framer-motion'
 import ThemeToggle from './ThemeToggle'
 
 const menuItems = [
   { name: 'Home', id: 'home' },
-  { name: 'Projects', id: 'projects' },
   { name: 'About', id: 'about' },
-  { name: 'Skills', id: 'skills' },
   { name: 'Experience', id: 'experience' },
+  { name: 'Projects', id: 'projects' },
+  { name: 'Skills', id: 'skills' },
   { name: 'Contact', id: 'contact' },
 ]
 
@@ -24,6 +24,7 @@ export default function Navigation() {
       setScrolled(window.scrollY > 24)
 
       for (const item of menuItems) {
+        if (!item.id) continue
         const element = document.getElementById(item.id)
         if (!element) continue
 
@@ -50,9 +51,8 @@ export default function Navigation() {
       >
         <a
           href="#home"
-          className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.08em] text-[var(--text-primary)]"
+          className="inline-flex items-center text-sm font-semibold tracking-[0.08em] text-[var(--text-primary)]"
         >
-          <Sparkles size={16} className="text-[var(--accent)]" />
           SAMIA
         </a>
 
@@ -75,7 +75,9 @@ export default function Navigation() {
         </div>
 
         <div className="flex items-center gap-3">
-          <ThemeToggle />
+          <div className="hidden md:block">
+            <ThemeToggle />
+          </div>
           <button
             onClick={() => setIsOpen((prev) => !prev)}
             className="p-2 text-[var(--text-secondary)] transition hover:bg-[var(--pill-bg)] hover:text-[var(--text-primary)] md:hidden"
@@ -93,6 +95,9 @@ export default function Navigation() {
             className="absolute left-0 right-0 top-[calc(100%+0.7rem)] mx-4 border bg-[var(--surface-strong)] p-4 backdrop-blur-xl md:hidden"
             style={{ borderColor: 'var(--border-color)' }}
           >
+            <div className="mb-3">
+              <ThemeToggle />
+            </div>
             <div className="flex flex-col gap-2">
               {menuItems.map((item) => (
                 <a

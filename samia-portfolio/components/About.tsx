@@ -4,6 +4,8 @@ import { motion } from 'framer-motion'
 import { portfolioData } from '@/data/portfolio'
 
 export default function About() {
+  const aboutParagraphs = portfolioData.about.split('\n\n').filter(Boolean)
+
   return (
     <section id="about" className="py-20 sm:py-24">
       <div className="section-shell">
@@ -30,12 +32,11 @@ export default function About() {
               transition={{ duration: 0.6 }}
               className="glass-card space-y-4"
             >
-              <p className="leading-relaxed text-[var(--text-secondary)]">
-                {portfolioData.about.split('\n\n')[0]}
-              </p>
-              <p className="leading-relaxed text-[var(--text-secondary)]">
-                {portfolioData.about.split('\n\n')[1]}
-              </p>
+              {aboutParagraphs.map((paragraph) => (
+                <p key={paragraph} className="leading-relaxed text-[var(--text-secondary)]">
+                  {paragraph}
+                </p>
+              ))}
             </motion.div>
 
             <motion.div
@@ -56,7 +57,8 @@ export default function About() {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.16em] text-[var(--text-tertiary)]">Current Role</p>
-                  <p className="mt-2 font-medium text-[var(--text-primary)]">Data Engineer Intern</p>
+                  <p className="mt-2 font-medium text-[var(--text-primary)]">Undergraduate Teaching Assistant</p>
+                  <p className="text-sm text-[var(--text-secondary)]">University of Alberta</p>
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.16em] text-[var(--text-tertiary)]">Contact</p>

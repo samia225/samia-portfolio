@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { portfolioData } from '@/data/portfolio'
-import { BriefcaseBusiness } from 'lucide-react'
 
 export default function Experience() {
   return (
@@ -16,7 +15,6 @@ export default function Experience() {
         >
           <div className="section-header">
             <span className="eyebrow">Experience</span>
-            <h2 className="section-title">Building high-impact systems in real environments</h2>
           </div>
 
           <div className="space-y-5">
@@ -35,10 +33,6 @@ export default function Experience() {
                     <h3 className="mt-1 text-xl font-semibold text-[var(--text-primary)]">{exp.role}</h3>
                     <p className="text-[var(--accent)]">{exp.company}</p>
                   </div>
-                  <span className="pill">
-                    <BriefcaseBusiness size={14} className="mr-2" />
-                    Professional
-                  </span>
                 </div>
 
                 {exp.description && (

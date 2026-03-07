@@ -16,14 +16,11 @@ export default function Projects() {
         >
           <div className="section-header">
             <span className="eyebrow">Projects</span>
-            <h2 className="section-title">A creative portfolio grounded in engineering outcomes</h2>
-            <p className="section-description">
-              Selected work in machine learning, automation, and full-stack development.
-            </p>
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {portfolioData.projects.map((project, index) => (
+              // Show private projects without fake public links.
               <motion.article
                 key={project.id}
                 initial={{ opacity: 0, y: 18 }}
@@ -49,35 +46,55 @@ export default function Projects() {
                 </div>
 
                 <div className="mt-6 flex gap-2 pt-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-1 items-center justify-center gap-2 px-3 py-2 text-sm font-medium transition hover:opacity-90"
-                    style={{
-                      borderRadius: '2px',
-                      background: 'var(--pill-bg)',
-                      color: 'var(--text-primary)',
-                      border: '1px solid var(--border-color)',
-                    }}
-                  >
-                    <Github size={16} />
-                    Code
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-1 items-center justify-center gap-2 px-3 py-2 text-sm font-semibold transition hover:opacity-90"
-                    style={{
-                      borderRadius: '2px',
-                      background: 'var(--text-primary)',
-                      color: 'var(--bg-primary)',
-                    }}
-                  >
-                    <ExternalLink size={16} />
-                    Demo
-                  </a>
+                  {project.private ? (
+                    <div
+                      className="flex flex-1 items-center justify-center px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em]"
+                      style={{
+                        borderRadius: '2px',
+                        background: 'var(--pill-bg)',
+                        color: 'var(--text-secondary)',
+                        border: '1px solid var(--border-color)',
+                      }}
+                    >
+                      Private demo/code available on request
+                    </div>
+                  ) : (
+                    <>
+                      {project.github !== '#' && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex flex-1 items-center justify-center gap-2 px-3 py-2 text-sm font-medium transition hover:opacity-90"
+                          style={{
+                            borderRadius: '2px',
+                            background: 'var(--pill-bg)',
+                            color: 'var(--text-primary)',
+                            border: '1px solid var(--border-color)',
+                          }}
+                        >
+                          <Github size={16} />
+                          Code
+                        </a>
+                      )}
+                      {project.demo !== '#' && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex flex-1 items-center justify-center gap-2 px-3 py-2 text-sm font-semibold transition hover:opacity-90"
+                          style={{
+                            borderRadius: '2px',
+                            background: 'var(--text-primary)',
+                            color: 'var(--bg-primary)',
+                          }}
+                        >
+                          <ExternalLink size={16} />
+                          Demo
+                        </a>
+                      )}
+                    </>
+                  )}
                 </div>
               </motion.article>
             ))}
