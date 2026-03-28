@@ -1,45 +1,20 @@
 export const portfolioData = {
   name: 'Samia Rahman',
-  title: 'AI/ML Engineer & Software Developer',
-  bio: 'Computing Science student at the University of Alberta with experience in AI/ML, data engineering, and full-stack software development.',
+  title: 'Software Engineer & Machine Learning Developer',
+  bio: 'CS student at UAlberta specializing in ML, full-stack development, and data engineering — with 3 internships across software, ML research, and enterprise data systems.',
   email: 'samia5@ualberta.ca',
   phone: '437-983-6021',
   social: {
     github: 'https://github.com/samia225',
     linkedin: 'https://linkedin.com/in/samia-rahman-3264281b2',
   },
-  // Upload your latest resume into /public as resume.pdf.
-  resumeUrl: '/resume.pdf',
-  funFacts: [
-    {
-      emoji: '🌌',
-      title: 'Northern Lights Dream',
-      fact: 'I want to build immersive AI visuals inspired by aurora skies and use them in creative products.',
-    },
-    {
-      emoji: '🤖',
-      title: 'Robot Brain Mode',
-      fact: 'I have worked on reinforcement learning systems that improve control behavior and training efficiency.',
-    },
-    {
-      emoji: '📊',
-      title: 'Data to Decisions',
-      fact: 'I enjoy turning messy enterprise data into clear dashboards people can actually make decisions with.',
-    },
-    {
-      emoji: '☕',
-      title: 'Build Ritual',
-      fact: 'My favorite workflow is: sketch idea, prototype quickly, then polish the experience with thoughtful details.',
-    },
-    {
-      emoji: '✨',
-      title: 'Design + Engineering',
-      fact: 'I care about how software feels, not just whether it works.',
-    },
-  ],
-  about: `I am a Computing Science student at the University of Alberta interested in building intelligent systems that combine machine learning, robotics, and software engineering. My work focuses on reinforcement learning, robotic control, and data systems, where I design models and software that can learn from data and operate reliably in real-world environments.
+  resumeUrl: '/Samia_Rahman_Resume.pdf',
 
-Alongside my research in ML and robotics, I have industry experience developing scalable data pipelines and analytics systems. I have worked with Python, SQL, and APIs to build ETL pipelines, dashboards, and automation tools used in real operational settings. I enjoy building systems end-to-end, from machine learning models to the software and data infrastructure that support them.`,
+  about: `I am a Computing Science student at the University of Alberta specializing in software engineering, machine learning, and data systems. I build end-to-end systems from full-stack web applications to reinforcement learning models that operate in real industrial environments.
+
+My industry experience spans data engineering at the City of Edmonton, ML systems development at PDASA, and production software for real clients. At PDASA, I deployed a real-time A3C reinforcement learning agent for oil and gas operations. At the City of Edmonton, I built backend pipelines processing millions of records for 500+ users.
+
+I also build production software for real clients including UNTAPPED, an artist management platform for FALAC and ACPA Foundation that helps 50+ artists submit invoices, track payments, and manage documents.`,
   skills: {
     'Full-Stack Development': [
       'Python',
@@ -57,7 +32,7 @@ Alongside my research in ML and robotics, I have industry experience developing 
       'PostgreSQL',
       'MongoDB',
     ],
-    'Data Engineering & Analytics': ['ETL Pipelines', 'Pandas', 'NumPy', 'Power BI', 'Tableau', 'Jupyter Notebook'],
+    'Data Engineering & Analytics': ['ETL Pipelines', 'Pandas', 'NumPy', 'SQLAlchemy', 'Power BI', 'Tableau', 'Jupyter Notebook'],
     'AI/ML': [
       'Machine Learning',
       'Reinforcement Learning',
@@ -70,14 +45,14 @@ Alongside my research in ML and robotics, I have industry experience developing 
       'TensorFlow',
       'Scikit-learn',
     ],
-    'Cloud & DevOps': ['AWS', 'Docker', 'Firebase', 'Linux', 'Git', 'GitHub Actions', 'CI/CD'],
+    'Cloud & DevOps': ['AWS (S3)', 'Docker', 'Firebase', 'Linux', 'Git', 'GitHub Actions', 'CI/CD'],
   },
   projects: [
     {
       id: 1,
       title: 'UNTAPPED: Artist Management Web App',
       description:
-        'Building a full-stack web platform for artist onboarding, invoice workflows, payment tracking, and secure document storage with a scalable SaaS-style architecture.',
+        'Built a production artist management portal for FALAC and ACPA Foundation enabling 50+ artists to submit invoices, track payment status, and manage onboarding documents. Features role-based access control, invoice approval workflows, and PIPEDA-compliant AWS S3 document storage replacing a fully manual email and spreadsheet process.',
       tech: ['React', 'Node.js', 'PostgreSQL', 'OAuth2', 'AWS S3'],
       github: '#',
       demo: '#',
@@ -88,7 +63,7 @@ Alongside my research in ML and robotics, I have industry experience developing 
       id: 2,
       title: 'IoT Smart Home Test Automation',
       description:
-        'Designed a TDD-focused test suite with black-box and boundary-value analysis, achieving 80%+ branch coverage and automating validation with CI/CD.',
+        'Achieved 80%+ branch coverage across state consistency logic including heating/cooling exclusivity, sensor accuracy, and alarm triggers by designing a TDD test suite using black-box and boundary value analysis in JUnit 5. Eliminated manual test execution by building a Docker and GitHub Actions CI/CD pipeline that runs coverage analysis on every commit.',
       tech: ['Java', 'JUnit 5', 'Docker', 'GitHub Actions'],
       github: '#',
       demo: '#',
@@ -99,7 +74,7 @@ Alongside my research in ML and robotics, I have industry experience developing 
       id: 3,
       title: 'FoodMinder: Smart Grocery Management',
       description:
-        'Built an LLM-powered React Native app using Google Gemini for receipt OCR and structured data extraction, reducing manual entry by 90% with Firebase sync.',
+        'Reduced grocery manual entry by 90% by building an LLM-powered React Native app using Google Gemini for receipt OCR and structured data extraction, with real-time Firebase sync.',
       tech: ['TypeScript', 'React Native', 'Gemini API', 'Firebase'],
       github: 'https://github.com/samia225/FoodMinder',
       demo: '#',
@@ -119,7 +94,7 @@ Alongside my research in ML and robotics, I have industry experience developing 
       id: 5,
       title: 'Database Optimization and Query Performance',
       description:
-        'Redesigned and optimized MongoDB schemas, data models, and indexing strategy using Python and SQL, reducing query/read times by 30% and cutting storage usage by 22%.',
+        'Reduced query and read times by 30% and cut storage usage by 22% by redesigning and optimizing MongoDB schemas, data models, and indexing strategy using Python and SQL.',
       tech: ['Python', 'SQL', 'MongoDB'],
       github: 'https://github.com/samia225/w24-mp2-mongominds--copy',
       demo: '#',
@@ -129,42 +104,42 @@ Alongside my research in ML and robotics, I have industry experience developing 
   experience: [
     {
       role: 'Undergraduate Teaching Assistant',
-      company: 'University of Alberta',
+      company: 'University of Alberta – Faculty of Computing Science',
       period: 'Jan 2026 – Present',
-      description: '',
+      description: 'Supporting the next generation of CS students in building reliable, ethical software systems.',
       highlights: [
-        'Facilitated Python-based lab sessions focused on automation, testing, and responsible AI usage.',
-        'Guided students in building structured, reliable systems while emphasizing trustworthy and ethical AI practices.',
+        'Facilitated Python-based lab sessions covering automation, testing, and responsible AI usage for Computing Science students.',
+        'Guided students in designing structured, testable systems while emphasizing ethical and trustworthy application of AI tools.',
       ],
     },
     {
       role: 'Data Engineer Intern',
-      company: 'City of Edmonton',
+      company: 'City of Edmonton – Financial & Corporate Services',
       period: 'May 2025 – Dec 2025',
-      description: '',
+      description: 'Built scalable data infrastructure supporting supply chain reporting and operations for one of Canada\'s largest municipal governments.',
       highlights: [
-        'Designed and deployed AI-driven automation workflows integrating 20 SAP Ariba REST APIs using Python (Pandas, NumPy, SQLAlchemy), SQL Server, and Gemini API for scalable reporting and operations support across 500+ users.',
-        'Engineered analytics and reporting infrastructure with monitoring and data quality controls, reducing reporting discrepancies by 30% and enabling stronger executive decision support.',
+        'Automated processing of millions of records for 500+ users by building scalable backend data pipelines integrating 20 SAP Ariba REST APIs using Python (Pandas, NumPy, SQLAlchemy) and SQL Server.',
+        'Improved data reliability by implementing automated validation, monitoring, and data quality controls, reducing reporting discrepancies by 30% across supply chain systems.',
       ],
     },
     {
-      role: 'Machine Learning Developer Co-op',
+      role: 'Machine Learning Engineer Intern',
       company: 'Process Data Analytics and Smart Automation Lab (PDASA)',
       period: 'Jan 2025 – Apr 2025',
-      description: '',
+      description: 'Developed real-time ML control systems for industrial oil & gas operations in collaboration with industry partners.',
       highlights: [
-        'Designed and deployed a real-time AI control system in PyTorch for monitoring bitumen extraction and debris detection in Primary Separation Vessels (PSVs) with closed-loop valve regulation.',
-        'Implemented an A3C actor-critic architecture with CNN-LSTM encoders and structured performance monitoring, improving response time and reducing training time by 35% after migrating from TensorFlow.',
+        'Reduced manual bitumen extraction monitoring by 80% by deploying a PyTorch-based A3C reinforcement learning agent with CNN-LSTM encoders to automate closed-loop valve regulation via camera sensors.',
+        'Reduced training time by 35% by migrating a legacy RL system from TensorFlow 1.x to PyTorch, redesigning training pipelines and model components.',
       ],
     },
     {
-      role: 'Undergraduate Student Researcher - ML/Robotics',
-      company: 'University of Alberta',
+      role: 'ML & Robotics Research Assistant',
+      company: 'University of Alberta – Faculty of Science',
       period: 'Sep 2024 – Present',
-      description: '',
+      description: 'Researching transferable robotic control systems using deep learning and reinforcement learning in the Autonomous Robotics and Perception Lab.',
       highlights: [
-        'Designed a VAE integrated with Soft Actor-Critic (SAC) in PyTorch to improve policy generalization and cross-task transfer in robotic control, reducing training data by 40%.',
-        'Optimized linear Model Predictive Control (MPC) for UAV navigation (thrust, pitch, roll), achieving 27% faster response, 41% better stability, and 18% lower computational overhead.',
+        'Reduced training data requirements by 40% by developing PyTorch ML pipelines combining variational autoencoders (VAE) and Soft Actor-Critic (SAC) to improve policy generalization across robotic control environments (Robosuite).',
+        'Improved UAV control performance achieving 27% faster response, 41% increased stability, and 18% lower computational overhead by implementing and optimizing Model Predictive Control (MPC) algorithms.',
       ],
     },
   ],
