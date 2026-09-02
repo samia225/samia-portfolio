@@ -1,7 +1,7 @@
 export const portfolioData = {
   name: 'Samia Rahman',
   title: 'Software Engineer & Machine Learning Developer',
-  bio: 'CS student at UAlberta specializing in ML, full-stack development, and data engineering — with 3 internships across software, ML research, and enterprise data systems.',
+  bio: 'CS student at UAlberta specializing in ML, full-stack development, and data engineering — with 3 internships across data science, software engineering, and ML research.',
   email: 'samia5@ualberta.ca',
   phone: '437-983-6021',
   social: {
@@ -12,7 +12,7 @@ export const portfolioData = {
 
   about: `I am a Computing Science student at the University of Alberta specializing in software engineering, machine learning, and data systems. I build end-to-end systems from full-stack web applications to reinforcement learning models that operate in real industrial environments.
 
-My industry experience spans data engineering at the City of Edmonton, ML systems development at PDASA, and production software for real clients. At PDASA, I deployed a real-time A3C reinforcement learning agent for oil and gas operations. At the City of Edmonton, I built backend pipelines processing millions of records for 500+ users.
+My industry experience spans MLOps at Capital Power, data engineering at the City of Edmonton, ML systems development at PDASA, and production software for real clients. At Capital Power, I built an end-to-end MLOps pipeline for turbine failure prediction at a 1.6GW energy facility. At PDASA, I deployed a real-time A3C reinforcement learning agent for oil and gas operations. At the City of Edmonton, I built backend pipelines processing millions of records for 500+ users.
 
 I also build production software for real clients including UNTAPPED, an artist management platform for FALAC and ACPA Foundation that helps 50+ artists submit invoices, track payments, and manage documents.`,
   skills: {
@@ -28,6 +28,7 @@ I also build production software for real clients including UNTAPPED, an artist 
       'React Native',
       'Node.js',
       'Express',
+      'HTML/CSS',
       'REST APIs',
       'PostgreSQL',
       'MongoDB',
@@ -45,14 +46,24 @@ I also build production software for real clients including UNTAPPED, an artist 
       'TensorFlow',
       'Scikit-learn',
     ],
-    'Cloud & DevOps': ['AWS (S3)', 'Docker', 'Firebase', 'Linux', 'Git', 'GitHub Actions', 'CI/CD'],
+    'Cloud & DevOps': ['AWS (S3)', 'Docker', 'Firebase', 'Linux', 'Git', 'GitHub Actions', 'CI/CD', 'Snowflake', 'Databricks'],
   },
   projects: [
     {
       id: 1,
+      title: 'InclusiTrip: Accessible Travel Matching Platform',
+      description:
+        'Improved accessibility-aware travel discovery by building a FastAPI platform that matches travelers to services based on mobility, sensory, cognitive, neurodivergent, and temporary accessibility needs.',
+      tech: ['FastAPI', 'Python', 'HTML', 'CSS', 'JavaScript'],
+      github: 'https://github.com/samia225/InclusiTrip',
+      demo: '#',
+      icon: '🧭',
+    },
+    {
+      id: 2,
       title: 'UNTAPPED: Artist Management Web App',
       description:
-        'Built a production artist management portal for FALAC and ACPA Foundation enabling 50+ artists to submit invoices, track payment status, and manage onboarding documents. Features role-based access control, invoice approval workflows, and PIPEDA-compliant AWS S3 document storage replacing a fully manual email and spreadsheet process.',
+        'Built and deployed a production multi-tenant portal for ACPA Foundation serving 50+ artists, eliminating manual admin workflows through invoice approval pipelines, role-based access control, and PIPEDA-compliant AWS S3 document storage.',
       tech: ['React', 'Node.js', 'PostgreSQL', 'OAuth2', 'AWS S3'],
       github: '#',
       demo: '#',
@@ -60,10 +71,10 @@ I also build production software for real clients including UNTAPPED, an artist 
       icon: '🎵',
     },
     {
-      id: 2,
+      id: 3,
       title: 'IoT Smart Home Test Automation',
       description:
-        'Achieved 80%+ branch coverage across state consistency logic including heating/cooling exclusivity, sensor accuracy, and alarm triggers by designing a TDD test suite using black-box and boundary value analysis in JUnit 5. Eliminated manual test execution by building a Docker and GitHub Actions CI/CD pipeline that runs coverage analysis on every commit.',
+        'Achieved 80%+ branch coverage on state consistency logic by designing a TDD test suite (black-box, boundary value analysis) and automating it with a Docker + GitHub Actions CI/CD pipeline running on every commit.',
       tech: ['Java', 'JUnit 5', 'Docker', 'GitHub Actions'],
       github: '#',
       demo: '#',
@@ -71,7 +82,7 @@ I also build production software for real clients including UNTAPPED, an artist 
       icon: '🏠',
     },
     {
-      id: 3,
+      id: 4,
       title: 'FoodMinder: Smart Grocery Management',
       description:
         'Reduced grocery manual entry by 90% by building an LLM-powered React Native app using Google Gemini for receipt OCR and structured data extraction, with real-time Firebase sync.',
@@ -81,7 +92,7 @@ I also build production software for real clients including UNTAPPED, an artist 
       icon: '🛒',
     },
     {
-      id: 4,
+      id: 5,
       title: 'Event Lottery System Application',
       description:
         'Led backend development of an Android event lottery system using Firebase Realtime Database, implementing geolocation queries, QR code validation, and atomic transactions to prevent race conditions and duplicate entries while supporting 10+ concurrent users.',
@@ -91,7 +102,7 @@ I also build production software for real clients including UNTAPPED, an artist 
       icon: '🎟️',
     },
     {
-      id: 5,
+      id: 6,
       title: 'Database Optimization and Query Performance',
       description:
         'Reduced query and read times by 30% and cut storage usage by 22% by redesigning and optimizing MongoDB schemas, data models, and indexing strategy using Python and SQL.',
@@ -103,6 +114,16 @@ I also build production software for real clients including UNTAPPED, an artist 
   ],
   experience: [
     {
+      role: 'Data Science Intern',
+      company: 'Capital Power',
+      period: 'May 2026 – Aug 2026',
+      description: 'Built ML systems for predictive maintenance at a 1.6GW energy facility, supporting equipment-level root-cause analysis.',
+      highlights: [
+        'Built an end-to-end MLOps pipeline for turbine failure prediction at a 1.6GW energy facility using Snowflake, Databricks, and Azure DevOps to identify equipment-level failure drivers for root-cause analysis.',
+        'Benchmarked PyOD anomaly detection models (Isolation Forest and others) against statistical baselines for early fault detection.',
+      ],
+    },
+    {
       role: 'Undergraduate Teaching Assistant',
       company: 'University of Alberta – Faculty of Computing Science',
       period: 'Jan 2026 – Present',
@@ -113,13 +134,13 @@ I also build production software for real clients including UNTAPPED, an artist 
       ],
     },
     {
-      role: 'Data Engineer Intern',
+      role: 'Software Engineer Intern',
       company: 'City of Edmonton – Financial & Corporate Services',
       period: 'May 2025 – Dec 2025',
       description: 'Built scalable data infrastructure supporting supply chain reporting and operations for one of Canada\'s largest municipal governments.',
       highlights: [
-        'Automated processing of millions of records for 500+ users by building scalable backend data pipelines integrating 20 SAP Ariba REST APIs using Python (Pandas, NumPy, SQLAlchemy) and SQL Server.',
-        'Improved data reliability by implementing automated validation, monitoring, and data quality controls, reducing reporting discrepancies by 30% across supply chain systems.',
+        'Automated processing of millions of records for 500+ users by designing and testing scalable backend data pipelines integrating 20 SAP Ariba REST APIs with Python (Pandas, NumPy, SQLAlchemy) and SQL Server.',
+        'Reduced reporting discrepancies by 30% across supply chain systems by implementing automated validation, monitoring, and data quality controls.',
       ],
     },
     {
@@ -136,10 +157,10 @@ I also build production software for real clients including UNTAPPED, an artist 
       role: 'ML & Robotics Research Assistant',
       company: 'University of Alberta – Faculty of Science',
       period: 'Sep 2024 – Present',
-      description: 'Researching transferable robotic control systems using deep learning and reinforcement learning in the Autonomous Robotics and Perception Lab.',
+      description: 'Researching compact latent action representations for robotic control in the Autonomous Robotics and Perception Lab.',
       highlights: [
-        'Reduced training data requirements by 40% by developing PyTorch ML pipelines combining variational autoencoders (VAE) and Soft Actor-Critic (SAC) to improve policy generalization across robotic control environments (Robosuite).',
-        'Improved UAV control performance achieving 27% faster response, 41% increased stability, and 18% lower computational overhead by implementing and optimizing Model Predictive Control (MPC) algorithms.',
+        'Improved reinforcement learning efficiency by 50% on robotic control tasks by building State-Conditioned Linear (SCL) action maps with VAEs, reducing control complexity from 6D to 3D.',
+        'Achieved 80x lower reconstruction error by training VAEs across 6 latent dimensions to identify the optimal action representation for robot control.',
       ],
     },
   ],
