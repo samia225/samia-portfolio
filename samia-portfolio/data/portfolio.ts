@@ -126,7 +126,7 @@ I also build production software for real clients including UNTAPPED, an artist 
     {
       role: 'Undergraduate Teaching Assistant',
       company: 'University of Alberta – Faculty of Computing Science',
-      period: 'Jan 2026 – Present',
+      period: 'Jan 2026 – Apr 2026',
       description: 'Supporting the next generation of CS students in building reliable, ethical software systems.',
       highlights: [
         'Facilitated Python-based lab sessions covering automation, testing, and responsible AI usage for Computing Science students.',
