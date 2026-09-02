@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { portfolioData } from '@/data/portfolio'
+import { FileText, Github, Linkedin } from 'lucide-react'
 
 export default function About() {
   const aboutParagraphs = portfolioData.about.split('\n\n').filter(Boolean)
@@ -61,6 +62,14 @@ export default function About() {
                   <p className="text-sm text-[var(--text-secondary)]">University of Alberta</p>
                 </div>
                 <div>
+                  <p className="text-xs uppercase tracking-[0.16em] text-[var(--text-tertiary)]">Graduation</p>
+                  <p className="mt-2 font-medium text-[var(--text-primary)]">May 2027</p>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.16em] text-[var(--text-tertiary)]">Focus</p>
+                  <p className="mt-2 font-medium text-[var(--text-primary)]">Software, Data & Applied ML</p>
+                </div>
+                <div>
                   <p className="text-xs uppercase tracking-[0.16em] text-[var(--text-tertiary)]">Contact</p>
                   <a
                     href={`mailto:${portfolioData.email}`}
@@ -69,6 +78,39 @@ export default function About() {
                     {portfolioData.email}
                   </a>
                 </div>
+              </div>
+
+              <div
+                className="mt-6 flex flex-wrap gap-2 pt-5"
+                style={{ borderTop: '1px solid var(--border-color)' }}
+              >
+                <a
+                  href={portfolioData.resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pill gap-2 transition hover:opacity-80"
+                >
+                  <FileText size={14} />
+                  Résumé
+                </a>
+                <a
+                  href={portfolioData.social.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pill gap-2 transition hover:opacity-80"
+                >
+                  <Github size={14} />
+                  GitHub
+                </a>
+                <a
+                  href={portfolioData.social.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pill gap-2 transition hover:opacity-80"
+                >
+                  <Linkedin size={14} />
+                  LinkedIn
+                </a>
               </div>
             </motion.div>
           </div>

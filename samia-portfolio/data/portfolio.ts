@@ -10,13 +10,13 @@ export const portfolioData = {
   },
   resumeUrl: '/Samia_Rahman_Resume.pdf',
 
-  about: `I am a Computing Science student at the University of Alberta building software, data, and machine learning systems for real-world problems.
+  about: `I build software for complex, real-world systems. I'm a Computing Science student at the University of Alberta with experience across software engineering, data systems, and applied machine learning, and I enjoy working across the stack — from backend services and data pipelines to ML workflows and user-facing applications.
 
-My experience spans full-stack development, data engineering, and applied machine learning. At Capital Power, I developed an end-to-end anomaly-detection workflow for equipment-risk analysis at a 1.6GW power-generation facility. At the City of Edmonton, I automated 20 enterprise REST APIs and built Python and SQL pipelines processing millions of procurement records for 500+ users. At PDASA, I rebuilt an industrial reinforcement learning pipeline in PyTorch, accelerating training by 35% and reducing manual monitoring by 80%.
+At the City of Edmonton, I automated 20 enterprise REST APIs and built Python and SQL pipelines processing millions of procurement records for 500+ users. At Capital Power, I developed an end-to-end anomaly-detection workflow for equipment-risk analysis at a 1.6GW power-generation facility. At PDASA, I rebuilt an industrial reinforcement learning pipeline in PyTorch, improving training speed by 35% and reducing manual monitoring by 80%.
 
-I also build user-facing software for external clients, including UNTAPPED, a multi-tenant artist operations platform built with React, Node.js, PostgreSQL, and AWS S3 to support invoice, payment, and document workflows for 50+ artists.
+I've also built full-stack software for external clients, including UNTAPPED, a multi-tenant platform supporting invoice, payment, and document workflows for 50+ artists.
 
-I'm currently seeking 2027 new-grad opportunities in software engineering, data engineering, and applied machine learning.`,
+I'm graduating in 2027 and seeking new-grad opportunities in software engineering, data engineering, and applied machine learning.`,
   skills: {
     'Full-Stack Development': [
       'Python',
