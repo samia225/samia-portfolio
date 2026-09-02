@@ -18,11 +18,6 @@ export default function About() {
         >
           <div className="section-header">
             <span className="eyebrow">About</span>
-            <h2 className="section-title">A modern engineer with creative instincts</h2>
-            <p className="section-description">
-              I blend engineering precision with product imagination, building systems that are robust, human, and
-              delightful to use.
-            </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
