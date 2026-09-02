@@ -55,9 +55,8 @@ I also build production software for real clients including UNTAPPED, an artist 
       description:
         'Improved accessibility-aware travel discovery by building a FastAPI platform that matches travelers to services based on mobility, sensory, cognitive, neurodivergent, and temporary accessibility needs.',
       tech: ['FastAPI', 'Python', 'HTML', 'CSS', 'JavaScript'],
-      github: '#',
+      github: 'https://github.com/samia225/InclusiTrip',
       demo: '#',
-      private: true,
       icon: '🧭',
     },
     {
