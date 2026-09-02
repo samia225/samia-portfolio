@@ -1,7 +1,7 @@
 export const portfolioData = {
   name: 'Samia Rahman',
-  title: 'Software Engineer & Machine Learning Developer',
-  bio: 'CS student at UAlberta specializing in ML, full-stack development, and data engineering — with 3 internships across data science, software engineering, and ML research.',
+  title: 'Software Engineer focused on data-intensive and intelligent systems',
+  bio: 'CS student at UAlberta building software, data, and machine learning systems for real-world problems — seeking 2027 new-grad opportunities.',
   email: 'samia5@ualberta.ca',
   phone: '437-983-6021',
   social: {
@@ -10,11 +10,13 @@ export const portfolioData = {
   },
   resumeUrl: '/Samia_Rahman_Resume.pdf',
 
-  about: `I am a Computing Science student at the University of Alberta specializing in software engineering, machine learning, and data systems. I build end-to-end systems from full-stack web applications to reinforcement learning models that operate in real industrial environments.
+  about: `I am a Computing Science student at the University of Alberta building software, data, and machine learning systems for real-world problems.
 
-My industry experience spans MLOps at Capital Power, data engineering at the City of Edmonton, ML systems development at PDASA, and production software for real clients. At Capital Power, I built an end-to-end MLOps pipeline for turbine failure prediction at a 1.6GW energy facility. At PDASA, I deployed a real-time A3C reinforcement learning agent for oil and gas operations. At the City of Edmonton, I built backend pipelines processing millions of records for 500+ users.
+My experience spans full-stack development, data engineering, and applied machine learning. At Capital Power, I developed an end-to-end anomaly-detection workflow for equipment-risk analysis at a 1.6GW power-generation facility. At the City of Edmonton, I automated 20 enterprise REST APIs and built Python and SQL pipelines processing millions of procurement records for 500+ users. At PDASA, I rebuilt an industrial reinforcement learning pipeline in PyTorch, accelerating training by 35% and reducing manual monitoring by 80%.
 
-I also build production software for real clients including UNTAPPED, an artist management platform for FALAC and ACPA Foundation that helps 50+ artists submit invoices, track payments, and manage documents.`,
+I also build user-facing software for external clients, including UNTAPPED, a multi-tenant artist operations platform built with React, Node.js, PostgreSQL, and AWS S3 to support invoice, payment, and document workflows for 50+ artists.
+
+I'm currently seeking 2027 new-grad opportunities in software engineering, data engineering, and applied machine learning.`,
   skills: {
     'Full-Stack Development': [
       'Python',

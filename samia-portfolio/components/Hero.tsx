@@ -3,10 +3,11 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { portfolioData } from '@/data/portfolio'
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
+import { ArrowDown, Mail } from 'lucide-react'
 
 export default function Hero() {
-  const typingLine = 'Building reliable AI/ML systems for real-world impact.'
+  const typingLine =
+    'Computing Science student with experience across full-stack development, enterprise data engineering, and applied machine learning. Seeking 2027 new-grad opportunities.'
   const [typedText, setTypedText] = useState('')
 
   useEffect(() => {
@@ -41,7 +42,7 @@ export default function Hero() {
                 className="mt-3 text-sm font-semibold tracking-[0.12em] sm:text-base"
                 style={{ color: 'var(--text-tertiary)' }}
               >
-                AI/ML & Data Engineer | Software Developer
+                Software Engineer focused on data-intensive and intelligent systems
               </p>
 
               <p
@@ -73,7 +74,7 @@ export default function Hero() {
                     color: 'var(--bg-primary)',
                   }}
                 >
-                  Explore Projects
+                  View Projects
                 </a>
                 <a
                   href={portfolioData.resumeUrl}
@@ -87,7 +88,35 @@ export default function Hero() {
                     background: 'var(--surface-strong)',
                   }}
                 >
-                  View Resume
+                  Download Résumé
+                </a>
+                <a
+                  href={portfolioData.social.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 text-sm font-semibold transition hover:bg-[var(--pill-bg)]"
+                  style={{
+                    borderRadius: '2px',
+                    color: 'var(--text-primary)',
+                    border: '1px solid var(--border-color)',
+                    background: 'var(--surface-strong)',
+                  }}
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href={portfolioData.social.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 text-sm font-semibold transition hover:bg-[var(--pill-bg)]"
+                  style={{
+                    borderRadius: '2px',
+                    color: 'var(--text-primary)',
+                    border: '1px solid var(--border-color)',
+                    background: 'var(--surface-strong)',
+                  }}
+                >
+                  GitHub
                 </a>
               </motion.div>
 
@@ -97,24 +126,6 @@ export default function Hero() {
                 transition={{ duration: 0.55, delay: 0.15 }}
                 className="mt-10 flex justify-center gap-3"
               >
-                <a
-                  href={portfolioData.social.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-card !p-3"
-                  aria-label="GitHub"
-                >
-                  <Github size={18} />
-                </a>
-                <a
-                  href={portfolioData.social.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-card !p-3"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin size={18} />
-                </a>
                 <a href={`mailto:${portfolioData.email}`} className="glass-card !p-3" aria-label="Email">
                   <Mail size={18} />
                 </a>
