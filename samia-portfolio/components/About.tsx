@@ -57,7 +57,7 @@ export default function About() {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.16em] text-[var(--text-tertiary)]">Current Role</p>
-                  <p className="mt-2 font-medium text-[var(--text-primary)]">Undergraduate Teaching Assistant</p>
+                  <p className="mt-2 font-medium text-[var(--text-primary)]">ML & Robotics Research Assistant</p>
                   <p className="text-sm text-[var(--text-secondary)]">University of Alberta</p>
                 </div>
                 <div>
