@@ -6,8 +6,8 @@ export type Link = { label: string; href: string }
 export const profile = {
   name: 'Samia Rahman',
   greeting: 'hi, I’m Samia',
-  sentence: 'I research reinforcement learning for robots, build ML pipelines, and make a very good strawberry matcha.',
-  status: 'Graduating 2027 · open to grad programs and new-grad roles',
+  sentence: 'I build software and ML systems for real-world problems, from robot control research to production data pipelines.',
+  status: 'Computing Science, University of Alberta · Graduating May 2027 · Open to new-grad roles in software, data and ML',
   email: 'samia5@ualberta.ca',
   personalEmail: 'samia.rahman2205@gmail.com',
   github: 'https://github.com/samia225',
@@ -21,7 +21,17 @@ export const profile = {
 export const FORMSPREE_ID = 'mwlowvjk'
 
 export const about =
-  'I’m a fourth-year Computing Science student at the University of Alberta with two years of internship experience and ongoing research in robotics and machine learning. My research focuses on making robot control problems smaller so agents learn faster, and I’ve built data and ML pipelines for the City of Edmonton and Capital Power. Right now I’m learning system design, and I’m curious about how AI is changing the way people think, feel and go about their day.'
+  'I build software for complex, real-world systems. I’m a Computing Science student at the University of Alberta with two years of internship experience across software engineering, data systems and applied machine learning, plus ongoing research in robotics and ML. At the City of Edmonton I automated 20 enterprise REST APIs and built Python and SQL pipelines processing millions of procurement records for 500+ users. At Capital Power I built an anomaly-detection workflow for equipment-risk analysis at a 1.6 GW plant. I’m also curious about how AI is changing the way people think, feel and go about their day.'
+
+// Quick-facts card beside the About text. `href` makes the value a link.
+export const quickFacts: { label: string; value: string; href?: string }[] = [
+  { label: 'Location', value: 'Edmonton, Alberta' },
+  { label: 'Education', value: 'University of Alberta' },
+  { label: 'Graduation', value: 'May 2027' },
+  { label: 'Current role', value: 'ML & Robotics Research Assistant' },
+  { label: 'Focus', value: 'Software, data and applied ML' },
+  { label: 'Contact', value: 'samia5@ualberta.ca', href: 'mailto:samia5@ualberta.ca' },
+]
 
 // Fun fact map. Order is the route. `id` picks the map point in data/worldMap.ts.
 export const waypoints = [
@@ -32,61 +42,62 @@ export const waypoints = [
 
 // Work experience, current role first, then newest first.
 // `tools` feeds the Skills and tools counts: only tools named in the bullets (Python counted where PyTorch/PyOD/Pandas are used).
-export type Role = { title: string; org: string; dates: string; points: string[]; tools: string[] }
+export type Role = { title: string; org: string; dates: string; summary?: string; points: string[] }
 
 export const experience: Role[] = [
-  {
-    title: 'Machine Learning & Robotics Research Assistant',
-    org: 'University of Alberta',
-    dates: 'Sep 2024 – present',
-    points: [
-      'Built VAE-based state-conditioned linear (SCL) action maps in PyTorch that cut a robot’s control space from 6-D to 3-D, with 80× lower reconstruction error.',
-      'Improved reinforcement learning efficiency by 50% with a Soft Actor-Critic agent acting in the smaller space, and explored transfer across robot morphologies.',
-      'Ran and documented experiments with faculty mentors using Robosuite, SAC and PPO.',
-    ],
-    tools: ['Python', 'PyTorch', 'VAEs', 'SAC', 'PPO', 'Robosuite'],
-  },
   {
     title: 'Data Science Intern',
     org: 'Capital Power',
     dates: 'May – Aug 2026',
+    summary: 'Built ML systems for predictive maintenance at a 1.6 GW energy facility.',
     points: [
-      'Built a turbine failure prediction pipeline for a 1.6 GW plant on Snowflake, Databricks and Azure DevOps. It shows which pieces of equipment drive each failure, for root-cause analysis.',
-      'Benchmarked PyOD anomaly detectors, including Isolation Forest, against statistical baselines for early fault detection.',
+      'Built an end-to-end MLOps pipeline for turbine failure prediction using Snowflake, Databricks and Azure DevOps to identify equipment-level failure drivers for root-cause analysis',
+      'Benchmarked PyOD anomaly detection models, including Isolation Forest, against statistical baselines for early fault detection',
     ],
-    tools: ['Python', 'Snowflake', 'Databricks', 'Azure DevOps', 'PyOD'],
   },
   {
     title: 'Undergraduate Teaching Assistant',
-    org: 'Faculty of Computing Science, University of Alberta',
+    org: 'University of Alberta, Faculty of Computing Science',
     dates: 'Jan – Apr 2026',
-    points: ['Ran Python labs on automation, testing and responsible use of AI tools.'],
-    tools: ['Python'],
+    summary: 'Helped CS students build reliable, ethical software systems.',
+    points: [
+      'Ran Python lab sessions covering automation, testing and responsible AI use',
+      'Guided students in designing structured, testable systems with trustworthy use of AI tools',
+    ],
   },
   {
     title: 'Software Engineer Intern',
     org: 'City of Edmonton, Financial & Corporate Services',
     dates: 'May – Dec 2025',
+    summary: 'Built data infrastructure for supply chain reporting at one of Canada’s largest municipal governments.',
     points: [
-      'Built Python (Pandas, SQLAlchemy) and SQL Server pipelines on 20 SAP Ariba REST APIs, processing millions of procurement records for 500+ users.',
-      'Added automated validation and monitoring. Reporting discrepancies across supply chain systems fell by 30%.',
+      'Automated processing of millions of records for 500+ users with backend data pipelines integrating 20 SAP Ariba REST APIs, using Python (Pandas, NumPy, SQLAlchemy) and SQL Server',
+      'Reduced reporting discrepancies by 30% with automated validation, monitoring and data quality controls',
     ],
-    tools: ['Python', 'Pandas', 'SQLAlchemy', 'SQL'],
   },
   {
     title: 'Machine Learning Engineer Intern',
     org: 'Process Data Analytics and Smart Automation Lab (PDASA)',
     dates: 'Jan – Apr 2025',
+    summary: 'Built real-time ML control systems for industrial oil and gas operations with industry partners.',
     points: [
-      'Deployed an A3C reinforcement learning agent with CNN-LSTM encoders for closed-loop valve control on an industrial bitumen extraction line, using camera input.',
-      'Cut manual monitoring by 80%.',
-      'Migrated the legacy system from TensorFlow 1.x to PyTorch and rebuilt the training pipeline, making training 35% faster.',
+      'Reduced manual bitumen extraction monitoring by 80% with a PyTorch A3C reinforcement learning agent using CNN-LSTM encoders for closed-loop valve control from camera sensors',
+      'Cut training time by 35% by migrating a legacy RL system from TensorFlow 1.x to PyTorch',
     ],
-    tools: ['Python', 'PyTorch', 'TensorFlow', 'A3C', 'CNNs'],
+  },
+  {
+    title: 'ML & Robotics Research Assistant',
+    org: 'University of Alberta',
+    dates: 'Sep 2024 – present',
+    summary: 'Researching compact action representations for robot control.',
+    points: [
+      'Improved reinforcement learning efficiency by 50% on robot control tasks with state-conditioned linear (SCL) action maps built on VAEs, cutting control complexity from 6-D to 3-D',
+      'Achieved 80× lower reconstruction error by comparing VAEs across latent sizes to find the best action representation',
+    ],
   },
 ]
 
-// Projects. Rendered as: title, context line, one paragraph (problem, built, result), stack, links, media.
+// Projects. Rendered as: title, one-liner, stack (closed); context line, paragraph, links, media (open).
 // Media paths are relative to /public. width/height are the file's real pixel size (prevents layout shift).
 type MediaBase = { src: string; alt: string; width: number; height: number }
 export type Media =
@@ -100,9 +111,7 @@ export type Project = {
   date: string // YYYY-MM, used only to sort newest first
   tagline: string // one short line on the closed card
   context: string
-  problem: string
-  built: string
-  result: string
+  description: string // the paragraph inside the open card
   stack: string[] // also feeds the Skills and tools counts
   links: Link[]
   linkNote?: string
@@ -116,12 +125,8 @@ const allProjects: Project[] = [
     title: 'TrustyTalker',
     tagline: 'Flags chatbot replies that miss what people asked for',
     context: 'natHacks 2026 · Team lead · Problem from MCRC Health',
-    problem:
-      'A health support chatbot can sound kind and still ignore what the person asked. Telling someone who says "I just want information" that they need to quit can push them away from help.',
-    built:
-      'A review tool that tracks what the person has said they want, runs 18 rule-based checks on every chatbot reply, and flags replies that pressure, miss danger signs, give medical advice or cite unsupported services. Clinicians and peer support workers make the final call, with an AI second opinion clearly labelled. It runs entirely in the browser with no network calls.',
-    result:
-      'On 59 labelled practice conversations, the checks caught 42 of 44 problem replies, including all 17 critical ones, and flagged none of the good replies. Early results; clinician review is next.',
+    description:
+      'A health support chatbot can sound kind and still ignore what the person asked. Telling someone who says "I just want information" that they need to quit can push them away from help. A review tool that tracks what the person has said they want, runs 18 rule-based checks on every chatbot reply, and flags replies that pressure, miss danger signs, give medical advice or cite unsupported services. Clinicians and peer support workers make the final call, with an AI second opinion clearly labelled. It runs entirely in the browser with no network calls. On 59 labelled practice conversations, the checks caught 42 of 44 problem replies, including all 17 critical ones, and flagged none of the good replies. Early results; clinician review is next.',
     stack: ['JavaScript', 'Node.js', 'OpenAI API'],
     links: [],
     linkNote: 'Code and demo available on request.',
@@ -141,11 +146,8 @@ const allProjects: Project[] = [
     title: 'InclusiTrip',
     tagline: 'Matches travellers to hotels by accessibility needs',
     context: 'natIgnite 2026 · 3rd place · Team of 5',
-    problem:
-      'Travel sites treat accessibility as a single checkbox. Someone using a wheelchair, someone with sensory sensitivities and someone recovering from an injury all get the same unhelpful filter.',
-    built:
-      'A platform where travellers enter their accessibility needs and get matched with hotels and services at their destination. It covers mobility, sensory, cognitive and neurodivergent needs, plus temporary ones like injury or fatigue, and works for caregivers planning on someone’s behalf. Built with FastAPI and plain HTML, CSS and JavaScript.',
-    result: 'Placed 3rd at natIgnite 2026.',
+    description:
+      'Improved accessibility-aware travel discovery with a FastAPI platform that matches travellers to services based on mobility, sensory, cognitive, neurodivergent and temporary needs. Placed 3rd at natIgnite 2026.',
     stack: ['FastAPI', 'Python', 'JavaScript'],
     links: [
       { label: 'View code', href: 'https://github.com/ipsamanhas/InclusiTrip' },
@@ -167,12 +169,11 @@ const allProjects: Project[] = [
     title: 'UNTAPPED',
     tagline: 'Invoicing and payments portal for 50+ artists',
     context: 'Client project for ACPA Foundation',
-    problem: 'Invoices, payments and documents for 50+ artists were handled by hand, and the documents included personal information covered by PIPEDA.',
-    built:
-      'A multi-tenant portal in React, Node.js and PostgreSQL with OAuth2 sign-in, role-based access, an invoice approval pipeline and PIPEDA-compliant document storage on AWS S3.',
-    result: 'In production for 50+ artists. The manual admin steps are gone.',
+    description:
+      'Built and deployed a production multi-tenant portal for ACPA Foundation serving 50+ artists, replacing manual admin work with invoice approval pipelines, role-based access control and PIPEDA-compliant AWS S3 document storage.',
     stack: ['React', 'Node.js', 'PostgreSQL', 'OAuth2', 'AWS S3'],
     links: [],
+    linkNote: 'Code available on request',
     media: [
       {
         kind: 'image',
@@ -189,9 +190,8 @@ const allProjects: Project[] = [
     title: 'FoodMinder',
     tagline: 'Turns a receipt photo into a grocery list',
     context: 'HackED 2025',
-    problem: 'Logging groceries by hand takes long enough that people stop doing it, and then food expires unnoticed.',
-    built: 'A React Native app that sends a receipt photo to Gemini, gets back structured line items and syncs them through Firebase.',
-    result: 'Manual entry dropped by about 90%: one photo replaces typing each item.',
+    description:
+      'Cut manual grocery entry by 90% with a React Native app that uses Google Gemini to read receipts and extract structured items, with real-time Firebase sync.',
     stack: ['TypeScript', 'React Native', 'Gemini API', 'Firebase'],
     links: [{ label: 'View code', href: 'https://github.com/samia225/FoodMinder' }],
     media: [
@@ -227,10 +227,8 @@ const allProjects: Project[] = [
     title: 'Event Lottery',
     tagline: 'Fair sign-ups for events that fill in seconds',
     context: 'Team project · I led the backend',
-    problem: 'Popular events fill in seconds, so a first-come sign-up rewards whoever refreshes fastest and lets duplicate entries in.',
-    built:
-      'The backend of an Android lottery app on Firebase Realtime Database: geolocation checks, QR code validation, and atomic transactions so two sign-ups cannot claim the same slot.',
-    result: 'No duplicate entries with 10+ users signing up at the same time.',
+    description:
+      'Led backend development of an Android event lottery app on Firebase Realtime Database, with geolocation checks, QR code validation and atomic transactions that prevent duplicate entries with 10+ concurrent users.',
     stack: ['Java', 'Android', 'Firebase'],
     links: [{ label: 'View code', href: 'https://github.com/samia225/Lottery-Event-App' }],
     media: [
@@ -250,11 +248,11 @@ const allProjects: Project[] = [
     title: 'IoT smart home test suite',
     tagline: 'Automated tests that run on every commit',
     context: 'Software testing project',
-    problem: 'A smart home system has to keep device state consistent, and that logic is easy to break without noticing.',
-    built: 'A test-driven suite of black-box and boundary-value tests in JUnit 5, run in Docker on GitHub Actions for every commit.',
-    result: '80%+ branch coverage on the state consistency logic.',
+    description:
+      'Reached 80%+ branch coverage on state consistency logic with a TDD test suite (black-box and boundary value analysis), automated with Docker and GitHub Actions on every commit.',
     stack: ['Java', 'JUnit 5', 'Docker', 'GitHub Actions'],
     links: [],
+    linkNote: 'Code available on request',
     media: [],
   },
   {
@@ -263,9 +261,8 @@ const allProjects: Project[] = [
     title: 'MongoDB schema redesign',
     tagline: 'Faster reads and less storage for a live database',
     context: 'Course project',
-    problem: 'Reads were slow and the database used more storage than it needed to.',
-    built: 'Redesigned the MongoDB schemas, data models and indexes, using Python and SQL.',
-    result: 'Reads 30% faster and storage down 22%.',
+    description:
+      'Cut query and read times by 30% and storage by 22% by redesigning MongoDB schemas, data models and indexes using Python and SQL.',
     stack: ['MongoDB', 'Python', 'SQL'],
     links: [{ label: 'View code', href: 'https://github.com/samia225/w24-mp2-mongominds--copy' }],
     media: [],
@@ -300,7 +297,7 @@ export const toolLines: { label: string; items: string }[] = [
   { label: 'Testing', items: 'JUnit 5, Selenium, unit and integration testing, TDD' },
 ]
 
-export const leadership: Omit<Role, 'tools'>[] = [
+export const leadership: Role[] = [
   {
     title: 'Co-lead, AdaHacks',
     org: 'Ada’s Team, University of Alberta',

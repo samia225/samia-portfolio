@@ -22,6 +22,8 @@
   --band-b: #ede6d4;
   --project-card: #e6dfcb;
   --project-title: #0f5c4a;
+  --entry-card-a: #f0eadc;
+  --entry-card-b: #fbf8f1;
   --project-card-hover: #ddd5be;
   --muted: #4d5a52;
   --bar-track: #e6e0cf;
@@ -48,6 +50,8 @@
   --band-b: #1a2822;
   --project-card: #1f2f28;
   --project-title: #8fd1b4;
+  --entry-card-a: #22332b;
+  --entry-card-b: #22332b;
   --project-card-hover: #26382f;
   --muted: #b8c2bb;
   --bar-track: #1f2d27;
@@ -71,6 +75,8 @@
   --band-b: #1a2822;
   --project-card: #1f2f28;
   --project-title: #8fd1b4;
+  --entry-card-a: #22332b;
+  --entry-card-b: #22332b;
   --project-card-hover: #26382f;
   --muted: #b8c2bb;
   --bar-track: #1f2d27;
@@ -218,10 +224,23 @@
   .band-a {
     background: var(--band-a);
     --wp-bg: var(--band-a);
+    --entry-card: var(--entry-card-a);
   }
   .band-b {
     background: var(--band-b);
     --wp-bg: var(--band-b);
+    --entry-card: var(--entry-card-b);
+  }
+  /* Entry cards (work, leadership, quick facts, tool groups). Solid fill, no border or shadow.
+     Light #F0EADC / #FBF8F1: text 11.7:1 / 13.3:1, heading 6.6:1 / 7.5:1, muted 6.0:1 / 6.8:1, links 7.5:1 / 8.4:1.
+     Dark #22332B: text 10.9:1, heading 7.6:1, muted 7.3:1, links 5.4:1. */
+  .entry-card {
+    background: var(--entry-card);
+    color: var(--text);
+  }
+  .entry-card > :focus-visible,
+  .entry-card :focus-visible {
+    box-shadow: 0 0 0 2px var(--entry-card);
   }
 
   /* ---------- Project cards ---------- */

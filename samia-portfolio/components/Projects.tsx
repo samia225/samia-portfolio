@@ -30,9 +30,7 @@ export default function Projects() {
               <div className={`mt-4 grid gap-4 ${p.media.length ? 'md:grid-cols-[55fr_45fr]' : ''}`}>
                 <div>
                   <p className="muted text-sm">{p.context}</p>
-                  <p className="mt-2">
-                    {p.problem} {p.built} {p.result}
-                  </p>
+                  <p className="mt-2">{p.description}</p>
                   {main || p.linkNote ? (
                     <p className="mt-3 flex flex-wrap items-center gap-3">
                       {main ? (
@@ -45,7 +43,7 @@ export default function Projects() {
                           {l.label}
                         </a>
                       ))}
-                      {p.linkNote ? <span className="text-sm">{p.linkNote}</span> : null}
+                      {p.linkNote ? <span className="muted text-sm">{p.linkNote}</span> : null}
                     </p>
                   ) : null}
                 </div>

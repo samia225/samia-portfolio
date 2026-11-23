@@ -25,14 +25,15 @@ export default function Skills() {
         ))}
       </ul>
 
-      <dl className="bleed mt-6 grid gap-x-6 gap-y-2 md:grid-cols-2">
+      {/* Each tool group in its own card, 2 columns on desktop. */}
+      <ul className="bleed mt-6 grid gap-2 md:grid-cols-2">
         {toolLines.map((g) => (
-          <div key={g.label}>
-            <dt className="inline font-semibold">{g.label}: </dt>
-            <dd className="inline">{g.items}</dd>
-          </div>
+          <li key={g.label} className="entry-card rounded-lg p-3">
+            <h4 className="font-bold">{g.label}</h4>
+            <p className="mt-1">{g.items}</p>
+          </li>
         ))}
-      </dl>
+      </ul>
     </Section>
   )
 }
