@@ -1,106 +1,60 @@
-'use client'
+import Section from './Section'
+import ProjectMedia from './ProjectMedia'
+import { projects } from '@/data/portfolio'
 
-import { motion } from 'framer-motion'
-import { portfolioData } from '@/data/portfolio'
-import { ExternalLink, Github } from 'lucide-react'
+function Chevron() {
+  return (
+    <svg className="chevron absolute right-0" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="m6 9 6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
 
+// Collapsible project cards, closed by default, newest first.
+// Closed: title, one-liner, stack. Open: text (~55%) beside media (~45%) on desktop, stacked on mobile.
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 sm:py-24">
-      <div className="section-shell">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="section-header">
-            <span className="eyebrow">Projects</span>
-          </div>
+    <Section id="projects" title="Projects" band="a">
+      <div className="bleed space-y-2">
+        {projects.map((p) => {
+          const [main, ...rest] = p.links
+          return (
+            <details key={p.id} className="project-card rounded-lg p-3">
+              <summary className="relative block max-w-none cursor-pointer pr-6">
+                <h3 className="text-xl font-bold">{p.title}</h3>
+                <span className="block">{p.tagline}</span>
+                <span className="muted mt-1 block text-sm">{p.stack.join(', ')}</span>
+                <Chevron />
+              </summary>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {portfolioData.projects.map((project, index) => (
-              // Show private projects without fake public links.
-              <motion.article
-                key={project.id}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: index * 0.08 }}
-                className="glass-card flex h-full flex-col"
-              >
-                <div className="mb-4 flex items-center justify-between">
-                  <span className="text-3xl">{project.icon}</span>
-                  <span className="pill">Project {project.id}</span>
-                </div>
-
-                <h3 className="text-lg font-semibold text-[var(--text-primary)]">{project.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">{project.description}</p>
-
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span key={tech} className="pill">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="mt-6 flex gap-2 pt-4">
-                  {project.private ? (
-                    <div
-                      className="flex flex-1 items-center justify-center px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em]"
-                      style={{
-                        borderRadius: '2px',
-                        background: 'var(--pill-bg)',
-                        color: 'var(--text-secondary)',
-                        border: '1px solid var(--border-color)',
-                      }}
-                    >
-                      Private demo/code available on request
-                    </div>
-                  ) : (
-                    <>
-                      {project.github !== '#' && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex flex-1 items-center justify-center gap-2 px-3 py-2 text-sm font-medium transition hover:opacity-90"
-                          style={{
-                            borderRadius: '2px',
-                            background: 'var(--pill-bg)',
-                            color: 'var(--text-primary)',
-                            border: '1px solid var(--border-color)',
-                          }}
-                        >
-                          <Github size={16} />
-                          Code
+              <div className={`mt-4 grid gap-4 ${p.media.length ? 'md:grid-cols-[55fr_45fr]' : ''}`}>
+                <div>
+                  <p className="muted text-sm">{p.context}</p>
+                  <p className="mt-2">
+                    {p.problem} {p.built} {p.result}
+                  </p>
+                  {main || p.linkNote ? (
+                    <p className="mt-3 flex flex-wrap items-center gap-3">
+                      {main ? (
+                        <a href={main.href} className="btn btn-primary">
+                          {main.label}
                         </a>
-                      )}
-                      {project.demo !== '#' && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex flex-1 items-center justify-center gap-2 px-3 py-2 text-sm font-semibold transition hover:opacity-90"
-                          style={{
-                            borderRadius: '2px',
-                            background: 'var(--text-primary)',
-                            color: 'var(--bg-primary)',
-                          }}
-                        >
-                          <ExternalLink size={16} />
-                          Demo
+                      ) : null}
+                      {rest.map((l) => (
+                        <a key={l.href} href={l.href} className="link font-semibold">
+                          {l.label}
                         </a>
-                      )}
-                    </>
-                  )}
+                      ))}
+                      {p.linkNote ? <span className="text-sm">{p.linkNote}</span> : null}
+                    </p>
+                  ) : null}
                 </div>
-              </motion.article>
-            ))}
-          </div>
-        </motion.div>
+                {p.media.length ? <ProjectMedia media={p.media} /> : null}
+              </div>
+            </details>
+          )
+        })}
       </div>
-    </section>
+    </Section>
   )
 }

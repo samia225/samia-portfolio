@@ -1,127 +1,37 @@
-# Samia's Portfolio
+﻿# samia-portfolio
 
-A modern, animated portfolio website built with Next.js, Tailwind CSS, and Framer Motion.
+Personal site for Samia Rahman. Next.js 14 (App Router), Tailwind, IBM Plex. Concept: a flight path.
 
-## Features
-
-- ✨ Smooth animations and transitions
-- 🎨 Dark theme with cyan & purple accents
-- 📱 Fully responsive design
-- ⚡ Fast performance with Next.js
-- 🚀 Easy deployment to Vercel
-- 🎯 Multiple sections (Hero, About, Projects, Skills, Contact)
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 16+ and npm/yarn installed
-
-### Installation
-
-1. Clone or download this repository
-2. Install dependencies:
 ```bash
 npm install
+npm run dev     # http://localhost:3000, shows placeholders for missing images
+npm run build   # production; missing images are hidden
 ```
 
-3. Run the development server:
-```bash
-npm run dev
-```
+## Editing content
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+All copy is in `data/portfolio.ts`. Search it for `TODO`.
 
-## Customization
+## Things to fill in
 
-### Edit Your Information
+- `data/portfolio.ts`: personal email, the `[amount]`s in two matcha recipes, and check the recipe notes.
+- `FORMSPREE_ID` in `data/portfolio.ts`: create a form at formspree.io pointed at your personal inbox and paste its ID (the part after `formspree.io/f/`).
+- Hero photo: add `public/images/samia-photo.jpg` (square, ~256px). The slot stays hidden until the file exists.
 
-All content is stored in `data/portfolio.ts`. Update this file with:
+## Media
 
-- Your name, email, phone
-- Social media links
-- Bio and about text
-- Projects (title, description, tech stack, links)
-- Experience details
-- Skills
+Project media lives in `public/images/projects/` and `public/videos/`, listed per project in `data/portfolio.ts` with real pixel sizes.
+GIFs over 3 MB should be converted to MP4; each GIF needs a `.still.webp` first frame and each video a `.poster.webp`.
 
-### Colors
+## Design rules
 
-Modify the color scheme in `tailwind.config.js`:
-- `cyan-accent`: Primary accent color
-- `purple-accent`: Secondary accent color
-- `dark-bg`: Background color
-- `dark-card`: Card background color
+- Colors are roles (`bg`, `text`, `heading`, `accent`, `data`, `fill`, `decor`), defined for light and dark in `app/globals.css`. Dark follows the system until the nav toggle is used. `fill` and `decor` are never text colors.
+- Spacing scale is 8px (`p-1` = 8px). The default 4px scale is removed on purpose.
+- The hero window is the only bordered element. No shadows, tags, eyebrows, section numbers, ALL CAPS labels, gradients, fades or scroll animation.
+- Monospace only in real code (the terminal).
+- Skills bars are counted from `experience[].tools`, `projects[].stack` and `smallerWork[].tools`; never type counts by hand.
+- `data/worldMap.ts` is generated from Natural Earth 110m (world-atlas). Don't hand-edit it.
 
-### Add Project Links
+## Easter egg
 
-In `data/portfolio.ts`, update the `github` and `demo` links for each project. When you're ready, link to your actual GitHub repos and live demos.
-
-## Deployment to Vercel
-
-1. Push your project to GitHub:
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin <your-repo-url>
-git push -u origin main
-```
-
-2. Go to [vercel.com](https://vercel.com) and sign in with GitHub
-3. Click "New Project" and select your repository
-4. Click "Deploy" - Vercel will automatically detect Next.js settings
-5. Your portfolio will be live at a URL like `your-project.vercel.app`
-
-### Custom Domain (Optional)
-
-1. In Vercel dashboard, go to Settings → Domains
-2. Add your custom domain
-3. Update DNS records according to Vercel's instructions
-
-## Project Structure
-
-```
-samia-portfolio/
-├── app/
-│   ├── layout.tsx          # Root layout
-│   ├── page.tsx            # Main page
-│   └── globals.css         # Global styles
-├── components/
-│   ├── Navigation.tsx      # Header navigation
-│   ├── Hero.tsx            # Hero section
-│   ├── About.tsx           # About section
-│   ├── Projects.tsx        # Projects showcase
-│   ├── Skills.tsx          # Skills section
-│   └── Contact.tsx         # Contact section
-├── data/
-│   └── portfolio.ts        # All content data
-├── package.json
-├── tailwind.config.js
-├── tsconfig.json
-└── next.config.js
-```
-
-## Technologies Used
-
-- **Next.js 14** - React framework
-- **Tailwind CSS** - Utility-first CSS
-- **Framer Motion** - Animation library
-- **lucide-react** - Icon library
-- **TypeScript** - Type safety
-
-## Quick Tips
-
-1. **Update links**: Replace `#` with actual GitHub and demo URLs
-2. **Add more projects**: Duplicate a project object in `data/portfolio.ts`
-3. **Change fonts**: Modify `app/globals.css`
-4. **Add sections**: Create new component in `components/` and import in `app/page.tsx`
-
-## Support
-
-For Next.js documentation, visit: https://nextjs.org/docs
-For Vercel deployment help: https://vercel.com/docs
-
----
-
-Happy deploying! 🚀
+Press `` ` `` to open the `~/samia` terminal. Try `ls`, `whereis samia`, `brew matcha`, `cd projects`.

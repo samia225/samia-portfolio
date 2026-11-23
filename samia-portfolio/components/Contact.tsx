@@ -1,71 +1,44 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import { portfolioData } from '@/data/portfolio'
-import { Github, Linkedin, Mail, WandSparkles } from 'lucide-react'
+import Section from './Section'
+import ContactForm from './ContactForm'
+import { FORMSPREE_ID, profile } from '@/data/portfolio'
 
 export default function Contact() {
   return (
-    <section id="contact" className="pb-20 pt-20 sm:pb-24 sm:pt-24">
-      <div className="section-shell">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="glass-panel p-8 text-center sm:p-12"
-        >
-          <span className="eyebrow mx-auto">
-            <WandSparkles size={14} className="mr-2" />
-            Contact
-          </span>
-          <h2 className="section-title">Let us create something meaningful</h2>
-          <p className="section-description">
-            Open to internships, full-time opportunities, and collaborations where design quality and technical depth
-            matter.
-          </p>
+    <Section id="contact" title="Contact" band="a">
+      <ContactForm formId={FORMSPREE_ID} />
 
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            <a
-              href={`mailto:${portfolioData.email}`}
-              className="glass-card text-left"
-              aria-label="Email"
-            >
-              <Mail size={20} className="text-[var(--accent)]" />
-              <p className="mt-3 text-sm font-semibold text-[var(--text-primary)]">Email</p>
-              <p className="mt-1 text-sm text-[var(--text-secondary)] break-all">{portfolioData.email}</p>
+      <dl className="mt-6 space-y-1">
+        <div>
+          <dt className="inline font-semibold">School: </dt>
+          <dd className="inline">
+            <a href={`mailto:${profile.email}`} className="link">
+              {profile.email}
             </a>
-
-            <a
-              href={portfolioData.social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-card text-left"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={20} className="text-[var(--accent)]" />
-              <p className="mt-3 text-sm font-semibold text-[var(--text-primary)]">LinkedIn</p>
-              <p className="mt-1 text-sm text-[var(--text-secondary)]">Connect professionally</p>
+          </dd>
+        </div>
+        <div>
+          <dt className="inline font-semibold">Personal: </dt>
+          <dd className="inline">
+            <a href={`mailto:${profile.personalEmail}`} className="link">
+              {profile.personalEmail}
             </a>
-
-            <a
-              href={portfolioData.social.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-card text-left"
-              aria-label="GitHub"
-            >
-              <Github size={20} className="text-[var(--accent)]" />
-              <p className="mt-3 text-sm font-semibold text-[var(--text-primary)]">GitHub</p>
-              <p className="mt-1 text-sm text-[var(--text-secondary)]">View code and experiments</p>
-            </a>
-          </div>
-
-          <p className="mt-10 text-xs text-[var(--text-tertiary)]">
-            © 2026 Samia Rahman. Crafted with Next.js, Tailwind CSS, and Framer Motion.
-          </p>
-        </motion.div>
-      </div>
-    </section>
+          </dd>
+        </div>
+      </dl>
+      <p className="mt-2 flex flex-wrap gap-x-3">
+        <a href={profile.github} className="link">
+          GitHub
+        </a>
+        <a href={profile.linkedin} className="link">
+          LinkedIn
+        </a>
+        <a href={profile.resume} className="link" target="_blank" rel="noopener noreferrer">
+          Résumé (PDF)<span className="sr-only"> (opens in a new tab)</span>
+        </a>
+      </p>
+      <p className="mt-3">
+        I graduate in 2027 and I’m looking at research-focused grad programs and new-grad roles in ML and software.
+      </p>
+    </Section>
   )
 }
