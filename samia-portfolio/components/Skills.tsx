@@ -1,48 +1,39 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import { portfolioData } from '@/data/portfolio'
+import Section from './Section'
+import { languages, toolLines } from '@/data/portfolio'
 
 export default function Skills() {
-  const categories = Object.entries(portfolioData.skills)
-
   return (
-    <section id="skills" className="py-20 sm:py-24">
-      <div className="section-shell">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="section-header">
-            <span className="eyebrow">Skills</span>
-          </div>
+    <Section id="skills" title="Skills and tools" band="b">
+      <h3 className="text-lg font-semibold">What I use most</h3>
+      <p>How much I use each language across work, research and projects.</p>
 
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {categories.map(([category, skills], index) => (
-              <motion.article
-                key={category}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: index * 0.08 }}
-                className="glass-card"
-              >
-                <h3 className="mb-4 text-lg font-semibold text-[var(--text-primary)]">{category}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {skills.map((skill) => (
-                    <span key={skill} className="pill">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </motion.article>
-            ))}
-          </div>
+      <ul className="mt-3 space-y-2">
+        {languages.map((l) => (
+          <li key={l.name}>
+            <span className="sr-only">{`${l.name}, ${l.percent} percent`}</span>
+            <div aria-hidden="true">
+              <p className="flex max-w-none justify-between gap-2">
+                <span className="font-semibold">{l.name}</span>
+                <span>{l.percent}%</span>
+              </p>
+              {/* 8px bar, 4px radius, one color. */}
+              <div className="bar-track h-1 rounded-sm">
+                <div className="bar-fill h-full rounded-sm" style={{ width: `${l.percent}%` }} />
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
 
-        </motion.div>
-      </div>
-    </section>
+      {/* Each tool group in its own card, 2 columns on desktop. */}
+      <ul className="bleed mt-6 grid gap-2 md:grid-cols-2">
+        {toolLines.map((g) => (
+          <li key={g.label} className="entry-card rounded-lg p-3">
+            <h4 className="font-bold">{g.label}</h4>
+            <p className="mt-1">{g.items}</p>
+          </li>
+        ))}
+      </ul>
+    </Section>
   )
 }
