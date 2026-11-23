@@ -37,7 +37,7 @@ export default function Contact() {
         </a>
       </p>
       <p className="mt-3">
-        I graduate in 2027 and I’m looking at research-focused grad programs and new-grad roles in ML and software.
+        I graduate in May 2027 and I’m looking for full-time new-grad roles in software, data and ML.
       </p>
     </Section>
   )
